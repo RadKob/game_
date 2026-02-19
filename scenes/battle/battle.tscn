@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceg20ts2igh34"]
 
-[ext_resource type="Texture2D" uid="uid://b05ibuy4qry0f" path="res://art/background.png" id="1_7gynk"]
+[ext_resource type="Texture2D" uid="uid://cx1w8hed0kdtl" path="res://art/background.png" id="1_7gynk"]
 [ext_resource type="PackedScene" uid="uid://do6vl01bx1air" path="res://scenes/card_ui/card_ui.tscn" id="2_ffvsa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
@@ -11,6 +11,7 @@ metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.783523, 0.783523, 0.783523, 1)
+scale = Vector2(1, 0.997)
 texture = ExtResource("1_7gynk")
 centered = false
 metadata/_edit_lock_ = true
@@ -19,7 +20,7 @@ metadata/_edit_lock_ = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(775, 475)
+position = Vector2(905, 384)
 shape = SubResource("RectangleShape2D_7gynk")
 
 [node name="BattleUI" type="CanvasLayer" parent="."]
