@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ceg20ts2igh34"]
+[gd_scene load_steps=5 format=3 uid="uid://ceg20ts2igh34"]
 
 [ext_resource type="Texture2D" uid="uid://crvy4axl011po" path="res://art/background.png" id="1_7gynk"]
 [ext_resource type="PackedScene" uid="uid://do6vl01bx1air" path="res://scenes/card_ui/card_ui.tscn" id="2_ffvsa"]
+[ext_resource type="Script" uid="uid://dq0msov8ilm6m" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(64, 64)
@@ -36,6 +37,8 @@ offset_top = -192.0
 offset_right = 350.0
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
+script = ExtResource("2_xd4uy")
 
 [node name="CardUI" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
