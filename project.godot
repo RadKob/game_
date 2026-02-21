@@ -15,6 +15,10 @@ run/main_scene="uid://ceg20ts2igh34"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="uid://673goql1ko30"
 
+[autoload]
+
+Events="*res://global/events.gd"
+
 [display]
 
 window/size/viewport_width=1024

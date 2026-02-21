@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://ceg20ts2igh34"]
+[gd_scene load_steps=17 format=3 uid="uid://ceg20ts2igh34"]
 
 [ext_resource type="Texture2D" uid="uid://crvy4axl011po" path="res://art/background.png" id="1_7gynk"]
 [ext_resource type="PackedScene" uid="uid://do6vl01bx1air" path="res://scenes/card_ui/card_ui.tscn" id="2_ffvsa"]
 [ext_resource type="Script" uid="uid://dq0msov8ilm6m" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
+[ext_resource type="PackedScene" uid="uid://blrwwfk8m5ggn" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pll4o"]
 [ext_resource type="Resource" uid="uid://dklvks874h6h" path="res://characters/player/cards/player_attack.tres" id="4_h0kxc"]
 [ext_resource type="Resource" uid="uid://nyyce41wl4a7" path="res://characters/player/cards/player_block.tres" id="5_fh7rg"]
 [ext_resource type="Texture2D" uid="uid://cnr1j26yhjj1f" path="res://art/Skeleton_Default_Idle_Sword.png" id="6_fh7rg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
-size = Vector2(353.5, 103.5)
+size = Vector2(512.25, 173.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fh7rg"]
 atlas = ExtResource("6_fh7rg")
@@ -76,7 +77,7 @@ metadata/_edit_lock_ = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(519.5, 209.5)
+position = Vector2(513.75, 174.75)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_7gynk")
 debug_color = Color(0, 0.6, 0.701961, 0.0823529)
@@ -95,6 +96,8 @@ frame_progress = 0.346611
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 position = Vector2(-4.5, 1)
 shape = SubResource("RectangleShape2D_icoan")
+
+[node name="CardTargetSelector" parent="." instance=ExtResource("3_pll4o")]
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
