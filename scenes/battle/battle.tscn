@@ -1,11 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceg20ts2igh34"]
+[gd_scene load_steps=16 format=3 uid="uid://ceg20ts2igh34"]
 
 [ext_resource type="Texture2D" uid="uid://crvy4axl011po" path="res://art/background.png" id="1_7gynk"]
 [ext_resource type="PackedScene" uid="uid://do6vl01bx1air" path="res://scenes/card_ui/card_ui.tscn" id="2_ffvsa"]
 [ext_resource type="Script" uid="uid://dq0msov8ilm6m" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
+[ext_resource type="Resource" uid="uid://dklvks874h6h" path="res://characters/player/cards/player_attack.tres" id="4_h0kxc"]
+[ext_resource type="Resource" uid="uid://nyyce41wl4a7" path="res://characters/player/cards/player_block.tres" id="5_fh7rg"]
+[ext_resource type="Texture2D" uid="uid://cnr1j26yhjj1f" path="res://art/Skeleton_Default_Idle_Sword.png" id="6_fh7rg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
-size = Vector2(64, 64)
+size = Vector2(353.5, 103.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh7rg"]
+atlas = ExtResource("6_fh7rg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pll4o"]
+atlas = ExtResource("6_fh7rg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py4tk"]
+atlas = ExtResource("6_fh7rg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agsc7"]
+atlas = ExtResource("6_fh7rg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiw7q"]
+atlas = ExtResource("6_fh7rg")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fisqk"]
+atlas = ExtResource("6_fh7rg")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxe8n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh7rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pll4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py4tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agsc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oiw7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fisqk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icoan"]
+size = Vector2(33, 32)
 
 [node name="Battle" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -20,9 +76,25 @@ metadata/_edit_lock_ = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(402, 255)
+position = Vector2(519.5, 209.5)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_7gynk")
+debug_color = Color(0, 0.6, 0.701961, 0.0823529)
+
+[node name="Enemy" type="Area2D" parent="."]
+position = Vector2(756, 244)
+scale = Vector2(3, 3)
+collision_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+sprite_frames = SubResource("SpriteFrames_mxe8n")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.346611
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(-4.5, 1)
+shape = SubResource("RectangleShape2D_icoan")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
@@ -43,16 +115,21 @@ script = ExtResource("2_xd4uy")
 [node name="CardUI" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
 size_flags_horizontal = 0
+card = ExtResource("4_h0kxc")
 
 [node name="CardUI2" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
+card = ExtResource("4_h0kxc")
 
 [node name="CardUI3" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
+card = ExtResource("4_h0kxc")
 
 [node name="CardUI4" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
+card = ExtResource("5_fh7rg")
 
 [node name="CardUI5" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
 size_flags_horizontal = 0
+card = ExtResource("5_fh7rg")
