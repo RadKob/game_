@@ -13,7 +13,7 @@ config_version=5
 config/name="game_"
 run/main_scene="uid://ceg20ts2igh34"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="uid://bvl6egow471ch"
+config/icon="uid://673goql1ko30"
 
 [display]
 
