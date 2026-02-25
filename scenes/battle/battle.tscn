@@ -91,7 +91,7 @@ collision_layer = 4
 sprite_frames = SubResource("SpriteFrames_mxe8n")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.346611
+frame_progress = 0.91967
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 position = Vector2(-4.5, 1)
