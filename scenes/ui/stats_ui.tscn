@@ -1,52 +1,125 @@
-[gd_scene load_steps=5 format=3 uid="uid://fdwe35r8dfq5"]
+[gd_scene load_steps=4 format=3 uid="uid://fdwe35r8dfq5"]
 
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_08kyh"]
-[ext_resource type="Texture2D" uid="uid://dcgimmomf7yl1" path="res://art/block.png" id="2_3ktwi"]
 [ext_resource type="Script" uid="uid://bq4limwbnqfad" path="res://scenes/ui/stats_ui.gd" id="2_7klq2"]
-[ext_resource type="Texture2D" uid="uid://c4ktpnsktpnop" path="res://art/health.png" id="3_7klq2"]
 
-[node name="StatsUI" type="HBoxContainer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -265.0
-offset_right = -9.0
-offset_bottom = 64.0
-grow_horizontal = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph7d1"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.662745, 0.662745, 0.662745, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[node name="StatsUI" type="VBoxContainer"]
+custom_minimum_size = Vector2(128, 112)
+offset_right = 128.0
+offset_bottom = 112.0
 theme = ExtResource("1_08kyh")
-alignment = 1
 script = ExtResource("2_7klq2")
+metadata/_edit_lock_ = true
 
-[node name="Block" type="HBoxContainer" parent="."]
+[node name="TopRow" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(128, 56)
 layout_mode = 2
-theme_override_constants/separation = 0
 
-[node name="BlockImage" type="TextureRect" parent="Block"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TopRow"]
+custom_minimum_size = Vector2(128, 56)
 layout_mode = 2
-texture = ExtResource("2_3ktwi")
-stretch_mode = 5
+theme_override_constants/separation = 14
+alignment = 1
 
-[node name="BlockLabel" type="Label" parent="Block"]
+[node name="HealthPanel" type="Panel" parent="TopRow/HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ph7d1")
+
+[node name="HealthImage" type="TextureRect" parent="TopRow/HBoxContainer/HealthPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthLabel" type="Label" parent="TopRow/HBoxContainer/HealthPanel"]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "6"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Health" type="HBoxContainer" parent="."]
+[node name="BlockPanel" type="Panel" parent="TopRow/HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
-theme_override_constants/separation = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ph7d1")
 
-[node name="HealthImage" type="TextureRect" parent="Health"]
-layout_mode = 2
-texture = ExtResource("3_7klq2")
-stretch_mode = 5
+[node name="BlockImage" type="TextureRect" parent="TopRow/HBoxContainer/BlockPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="HealthLabel" type="Label" parent="Health"]
+[node name="BlockLabel" type="Label" parent="TopRow/HBoxContainer/BlockPanel"]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomRow" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(128, 56)
 layout_mode = 2
-size_flags_vertical = 1
-text = "6"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomRow"]
+custom_minimum_size = Vector2(128, 56)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ManaPanel" type="Panel" parent="BottomRow/HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ph7d1")
+
+[node name="ManaImage" type="TextureRect" parent="BottomRow/HBoxContainer/ManaPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ManaLabel" type="Label" parent="BottomRow/HBoxContainer/ManaPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1/3"
 horizontal_alignment = 1
 vertical_alignment = 1

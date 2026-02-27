@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1gfg333si77r"]
+
+[ext_resource type="Texture2D" uid="uid://b2aa182a154kd" path="res://art/player128.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dgcbu3wpb3w8m" path="res://scenes/player/player.gd" id="1_dqkch"]
+[ext_resource type="Shader" uid="uid://b5snnxj2wewbe" path="res://scenes/player.gdshader" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://fdwe35r8dfq5" path="res://scenes/ui/stats_ui.tscn" id="3_qhqgy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+draw_center = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
+shader = ExtResource("1_g2els")
+
+[node name="Player" type="Node2D" groups=["player"]]
+script = ExtResource("1_dqkch")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 128.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Avatar" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qhqgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Avatar"]
+material = SubResource("ShaderMaterial_qhqgy")
+position = Vector2(64, 64)
+texture = ExtResource("1_3vyb7")
+
+[node name="StatsUI" parent="VBoxContainer" instance=ExtResource("3_qhqgy")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
