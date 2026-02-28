@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_lnihe")
-max_health = 1
+max_health = 2
 art = ExtResource("1_4whmm")
+animation_name = "idle"
 metadata/_custom_type_script = "uid://cwu0kjj0685ls"

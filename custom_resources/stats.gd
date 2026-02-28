@@ -5,6 +5,8 @@ signal stats_changed
 
 @export var max_health := 1
 @export var art: Texture
+@export var frames: SpriteFrames
+@export var animation_name: String = "idle"
 
 var health: int : set = set_health
 var block: int : set = set_block

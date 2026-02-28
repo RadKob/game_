@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dn8vgyp6mhfoj"]
+
+[ext_resource type="Script" uid="uid://bswlepqpeourr" path="res://scenes/enemy/enemy.gd" id="1_5uy6h"]
+[ext_resource type="Resource" uid="uid://dy6370iildejd" path="res://enemies/skeleton/test_enemy.tres" id="2_c4w8v"]
+[ext_resource type="Texture2D" uid="uid://cmxktw77uhfwm" path="res://art/arrow.png" id="2_md0e3"]
+[ext_resource type="PackedScene" uid="uid://bjk3306qtyldi" path="res://scenes/ui/enemy_stats_ui.tscn" id="3_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://673goql1ko30" path="res://art/player64.png" id="3_c4w8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icoan"]
+size = Vector2(33, 33)
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+scale = Vector2(3, 3)
+collision_layer = 4
+script = ExtResource("1_5uy6h")
+stats = ExtResource("2_c4w8v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_c4w8v")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_md0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 1)
+shape = SubResource("RectangleShape2D_icoan")
+
+[node name="EnemyStatsUI" parent="." instance=ExtResource("3_4ra3w")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 20.0
+offset_right = 96.0
+offset_bottom = 76.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)

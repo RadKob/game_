@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dgcbu3wpb3w8m" path="res://scenes/player/player.gd" id="1_dqkch"]
 [ext_resource type="Shader" uid="uid://b5snnxj2wewbe" path="res://scenes/player.gdshader" id="1_g2els"]
 [ext_resource type="Script" uid="uid://cirsvaokgrw2x" path="res://custom_resources/character_stats.gd" id="2_qlg0r"]
-[ext_resource type="PackedScene" uid="uid://fdwe35r8dfq5" path="res://scenes/ui/stats_ui.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://fdwe35r8dfq5" path="res://scenes/ui/player_stats_ui.tscn" id="3_qhqgy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
 shader = ExtResource("1_g2els")
@@ -19,6 +19,6 @@ position = Vector2(64, 62)
 texture = ExtResource("1_3vyb7")
 metadata/_edit_lock_ = true
 
-[node name="StatsUI" parent="." instance=ExtResource("3_qhqgy")]
+[node name="PlayerStatsUI" parent="." instance=ExtResource("3_qhqgy")]
 offset_top = 126.0
 offset_bottom = 242.0

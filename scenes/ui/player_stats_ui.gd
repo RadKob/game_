@@ -1,4 +1,4 @@
-class_name StatsUI
+class_name PlayerStatsUI
 extends VBoxContainer
 
 @onready var health_panel: Panel = $TopRow/HBoxContainer/HealthPanel

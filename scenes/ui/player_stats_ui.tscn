@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://fdwe35r8dfq5"]
 
-[ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_08kyh"]
-[ext_resource type="Script" uid="uid://bq4limwbnqfad" path="res://scenes/ui/stats_ui.gd" id="2_7klq2"]
+[ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_wuvb1"]
+[ext_resource type="Script" uid="uid://bq4limwbnqfad" path="res://scenes/ui/player_stats_ui.gd" id="2_kil65"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph7d1"]
 draw_center = false
@@ -16,12 +16,12 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 anti_aliasing = false
 
-[node name="StatsUI" type="VBoxContainer"]
+[node name="PlayerStatsUI" type="VBoxContainer"]
 custom_minimum_size = Vector2(128, 112)
 offset_right = 128.0
 offset_bottom = 112.0
-theme = ExtResource("1_08kyh")
-script = ExtResource("2_7klq2")
+theme = ExtResource("1_wuvb1")
+script = ExtResource("2_kil65")
 metadata/_edit_lock_ = true
 
 [node name="TopRow" type="VBoxContainer" parent="."]

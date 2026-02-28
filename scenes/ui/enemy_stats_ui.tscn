@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjk3306qtyldi"]
+
+[ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_4ncv3"]
+[ext_resource type="Script" uid="uid://ddrnmb75s2ynv" path="res://scenes/ui/enemy_stats_ui.gd" id="2_ppb7m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppb7m"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.662745, 0.662745, 0.662745, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[node name="EnemyStatsUI" type="VBoxContainer"]
+custom_minimum_size = Vector2(128, 56)
+offset_right = 128.0
+offset_bottom = 56.0
+theme = ExtResource("1_4ncv3")
+script = ExtResource("2_ppb7m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(128, 56)
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="HealthPanel" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ppb7m")
+
+[node name="HealthImage" type="TextureRect" parent="HBoxContainer/HealthPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthLabel" type="Label" parent="HBoxContainer/HealthPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlockPanel" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ppb7m")
+
+[node name="BlockImage" type="TextureRect" parent="HBoxContainer/BlockPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlockLabel" type="Label" parent="HBoxContainer/BlockPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
