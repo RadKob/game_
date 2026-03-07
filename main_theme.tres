@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://c10kqjrk4hc5w"]
 
-[ext_resource type="FontFile" uid="uid://qxm6oqvegl2n" path="res://art/upheavtt.ttf" id="1_470mv"]
+[ext_resource type="FontFile" uid="uid://8jyj4jfx6j73" path="res://art/Kreon-VariableFont_wght.ttf" id="1_470mv"]
 
 [resource]
 default_font = ExtResource("1_470mv")
