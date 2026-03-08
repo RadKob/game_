@@ -61,23 +61,28 @@ script = ExtResource("2_xd4uy")
 layout_mode = 2
 size_flags_horizontal = 0
 card = ExtResource("4_h0kxc")
+char_stats = ExtResource("4_agsc7")
 
 [node name="CardUI2" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
 card = ExtResource("4_h0kxc")
+char_stats = ExtResource("4_agsc7")
 
 [node name="CardUI3" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
 card = ExtResource("4_h0kxc")
+char_stats = ExtResource("4_agsc7")
 
 [node name="CardUI4" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
 card = ExtResource("5_fh7rg")
+char_stats = ExtResource("4_agsc7")
 
 [node name="CardUI5" parent="BattleUI/Hand" instance=ExtResource("2_ffvsa")]
 layout_mode = 2
 size_flags_horizontal = 0
 card = ExtResource("5_fh7rg")
+char_stats = ExtResource("4_agsc7")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("10_oiw7q")]
 offset_left = 65.0

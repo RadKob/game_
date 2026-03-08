@@ -8,10 +8,15 @@ func enter() -> void:
 	var ui_layer := get_tree().get_first_node_in_group("ui_layer")
 	if ui_layer:
 		card_ui.reparent(ui_layer)
+		
+	Events.card_drag_started.emit(card_ui)
 	
 	minimum_drag_time_elapsed = false
 	var threshold_timer := get_tree().create_timer(DRAG_MINIMUM_THRESHOLD, false)
 	threshold_timer.timeout.connect(func(): minimum_drag_time_elapsed = true)
+
+func exit() -> void:
+	Events.card_drag_ended.emit(card_ui)
 
 func on_input(event: InputEvent) -> void:
 	var single_targeted := card_ui.card.is_single_targeted()
