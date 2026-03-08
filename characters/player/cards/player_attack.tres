@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dklvks874h6h"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dklvks874h6h"]
 
-[ext_resource type="Script" uid="uid://cq0yslbbyqadv" path="res://custom_resources/card.gd" id="1_0nobi"]
+[ext_resource type="Script" uid="uid://crg7rpk2ha6rh" path="res://characters/player/cards/player_attack.gd" id="1_0nobi"]
 [ext_resource type="Texture2D" uid="uid://dfcrv0mlbmpbs" path="res://art/solar_strike.png" id="1_4opie"]
 
 [resource]
