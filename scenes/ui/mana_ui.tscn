@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cru2svon7ow8p"]
+
+[ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_rpnp3"]
+[ext_resource type="Script" uid="uid://c6cvjqdj2emuu" path="res://scenes/ui/mana_ui.gd" id="2_jwxui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwxui"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.662745, 0.662745, 0.662745, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="ManaUI" type="Panel"]
+custom_minimum_size = Vector2(46, 46)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_rpnp3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwxui")
+script = ExtResource("2_jwxui")
+
+[node name="ManaLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1 / 1"
+horizontal_alignment = 1
+vertical_alignment = 1

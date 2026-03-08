@@ -1,10 +1,10 @@
 class_name PlayerStatsUI
 extends VBoxContainer
 
-@onready var health_panel: Panel = $TopRow/HBoxContainer/HealthPanel
-@onready var health_label: Label = $TopRow/HBoxContainer/HealthPanel/HealthLabel
-@onready var block_panel: Panel = $TopRow/HBoxContainer/BlockPanel
-@onready var block_label: Label = $TopRow/HBoxContainer/BlockPanel/BlockLabel
+@onready var health_panel: Panel = $HBoxContainer/HealthPanel
+@onready var health_label: Label = $HBoxContainer/HealthPanel/HealthLabel
+@onready var block_panel: Panel = $HBoxContainer/BlockPanel
+@onready var block_label: Label = $HBoxContainer/BlockPanel/BlockLabel
 
 func update_stats(stats: Stats) -> void:
 	health_label.text = str(stats.health)

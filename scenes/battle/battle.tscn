@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ceg20ts2igh34"]
+[gd_scene load_steps=12 format=3 uid="uid://ceg20ts2igh34"]
 
 [ext_resource type="Texture2D" uid="uid://crvy4axl011po" path="res://art/background.png" id="1_7gynk"]
 [ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy.tscn" id="2_agsc7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/player/player.tres" id="4_agsc7"]
 [ext_resource type="Resource" uid="uid://dklvks874h6h" path="res://characters/player/cards/player_attack.tres" id="4_h0kxc"]
 [ext_resource type="Resource" uid="uid://nyyce41wl4a7" path="res://characters/player/cards/player_block.tres" id="5_fh7rg"]
+[ext_resource type="PackedScene" uid="uid://cru2svon7ow8p" path="res://scenes/ui/mana_ui.tscn" id="10_oiw7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(512.25, 173.25)
@@ -77,3 +78,10 @@ card = ExtResource("5_fh7rg")
 layout_mode = 2
 size_flags_horizontal = 0
 card = ExtResource("5_fh7rg")
+
+[node name="ManaUI" parent="BattleUI" instance=ExtResource("10_oiw7q")]
+offset_left = 65.0
+offset_top = 510.0
+offset_right = 111.0
+offset_bottom = 556.0
+char_stats = ExtResource("4_agsc7")
