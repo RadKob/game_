@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceg20ts2igh34"]
+[gd_scene load_steps=13 format=3 uid="uid://ceg20ts2igh34"]
 
 [ext_resource type="Texture2D" uid="uid://crvy4axl011po" path="res://art/background.png" id="1_7gynk"]
 [ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy.tscn" id="2_agsc7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://dklvks874h6h" path="res://characters/player/cards/player_attack.tres" id="4_h0kxc"]
 [ext_resource type="Resource" uid="uid://nyyce41wl4a7" path="res://characters/player/cards/player_block.tres" id="5_fh7rg"]
 [ext_resource type="PackedScene" uid="uid://cru2svon7ow8p" path="res://scenes/ui/mana_ui.tscn" id="10_oiw7q"]
+[ext_resource type="PackedScene" uid="uid://dvqw5x0rllmhs" path="res://scenes/ui/tooltip.tscn" id="11_fisqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(512.25, 173.25)
@@ -90,3 +91,5 @@ offset_top = 510.0
 offset_right = 111.0
 offset_bottom = 556.0
 char_stats = ExtResource("4_agsc7")
+
+[node name="Tooltip" parent="BattleUI" instance=ExtResource("11_fisqk")]
