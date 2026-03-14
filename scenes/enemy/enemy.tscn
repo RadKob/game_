@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn8vgyp6mhfoj"]
+[gd_scene load_steps=8 format=3 uid="uid://dn8vgyp6mhfoj"]
 
 [ext_resource type="Script" uid="uid://bswlepqpeourr" path="res://scenes/enemy/enemy.gd" id="1_5uy6h"]
-[ext_resource type="Resource" uid="uid://dy6370iildejd" path="res://enemies/skeleton/test_enemy.tres" id="2_c4w8v"]
 [ext_resource type="Texture2D" uid="uid://cmxktw77uhfwm" path="res://art/arrow.png" id="2_md0e3"]
 [ext_resource type="PackedScene" uid="uid://bjk3306qtyldi" path="res://scenes/ui/enemy_stats_ui.tscn" id="3_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://673goql1ko30" path="res://art/player64.png" id="3_c4w8v"]
+[ext_resource type="Script" uid="uid://cwu0kjj0685ls" path="res://custom_resources/stats.gd" id="3_xwavj"]
+
+[sub_resource type="Resource" id="Resource_nenq2"]
+script = ExtResource("3_xwavj")
+max_health = 2
+art = ExtResource("3_c4w8v")
+animation_name = "idle"
+metadata/_custom_type_script = "uid://cwu0kjj0685ls"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icoan"]
 size = Vector2(33, 33)
@@ -13,7 +20,7 @@ size = Vector2(33, 33)
 scale = Vector2(3, 3)
 collision_layer = 4
 script = ExtResource("1_5uy6h")
-stats = ExtResource("2_c4w8v")
+stats = SubResource("Resource_nenq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_c4w8v")

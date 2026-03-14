@@ -15,7 +15,7 @@ stats = ExtResource("2_qlg0r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["player"]]
 material = SubResource("ShaderMaterial_qhqgy")
-position = Vector2(64, 62)
+position = Vector2(64, 64)
 texture = ExtResource("1_3vyb7")
 metadata/_edit_lock_ = true
 

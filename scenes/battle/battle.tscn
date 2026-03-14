@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://ceg20ts2igh34"]
+[gd_scene load_steps=15 format=3 uid="uid://ceg20ts2igh34"]
 
 [ext_resource type="Texture2D" uid="uid://crvy4axl011po" path="res://art/background.png" id="1_7gynk"]
 [ext_resource type="Script" uid="uid://c3luo0wwvwj1u" path="res://scenes/battle/battle.gd" id="1_icoan"]
-[ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy.tscn" id="2_agsc7"]
+[ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy/enemy.tscn" id="2_agsc7"]
 [ext_resource type="Script" uid="uid://dq0msov8ilm6m" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
 [ext_resource type="PackedScene" uid="uid://blrwwfk8m5ggn" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pll4o"]
 [ext_resource type="PackedScene" uid="uid://b1gfg333si77r" path="res://scenes/player.tscn" id="3_py4tk"]
 [ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/player/player.tres" id="4_agsc7"]
+[ext_resource type="Resource" uid="uid://rqc2wmxt6fo8" path="res://enemies/gollem/gollem_enemy.tres" id="5_icoan"]
 [ext_resource type="Script" uid="uid://s82cncuefpm6" path="res://scenes/ui/battle_ui.gd" id="6_mxe8n"]
 [ext_resource type="Script" uid="uid://2rtk5svu7ewm" path="res://scenes/player/player_handler.gd" id="7_fisqk"]
 [ext_resource type="PackedScene" uid="uid://cru2svon7ow8p" path="res://scenes/ui/mana_ui.tscn" id="10_oiw7q"]
@@ -38,6 +39,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.0823529)
 
 [node name="Enemy" parent="." instance=ExtResource("2_agsc7")]
 position = Vector2(756, 244)
+stats = ExtResource("5_icoan")
 
 [node name="Player" parent="." instance=ExtResource("3_py4tk")]
 position = Vector2(26, 320)
