@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bflhuqi8wbsqo"]
+[gd_scene load_steps=5 format=3 uid="uid://bflhuqi8wbsqo"]
 
 [ext_resource type="Script" uid="uid://budxgr4r7d82f" path="res://scenes/enemy/enemy_action_picker.gd" id="1_0wf5s"]
+[ext_resource type="Script" uid="uid://c8sgtps33tl2n" path="res://enemies/gollem/gollem_attack_action.gd" id="2_bc0uy"]
+[ext_resource type="Script" uid="uid://br57qdb73xrj1" path="res://enemies/gollem/gollem_block_action.gd" id="3_3jvjc"]
+[ext_resource type="Script" uid="uid://bksn11wbp1b4r" path="res://enemies/gollem/gollem_mega_block_action.gd" id="4_cp78g"]
 
 [node name="GollemEnemyAi" type="Node"]
 script = ExtResource("1_0wf5s")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_bc0uy")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_3jvjc")
+type = 1
+chance_weight = 1.0
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("4_cp78g")
