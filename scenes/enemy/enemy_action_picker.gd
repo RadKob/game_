@@ -36,7 +36,7 @@ func get_chance_based_action() -> EnemyAction:
 	
 	for child in get_children():
 		action = child as EnemyAction
-		if not action or action. type != EnemyAction. Type.CHANCE_BASED:
+		if not action or action.type != EnemyAction.Type.CHANCE_BASED:
 			continue
 	
 		if action.accumulated_weight > roll:
@@ -49,7 +49,7 @@ func setup_chances() -> void:
 	
 	for child in get_children():
 		action = child as EnemyAction
-		if not action or action. type != EnemyAction. Type. CHANCE_BASED:
+		if not action or action.type != EnemyAction.Type.CHANCE_BASED:
 			continue
 	
 	total_weight += action.chance_weight
