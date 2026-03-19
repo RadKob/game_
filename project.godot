@@ -18,6 +18,7 @@ config/icon="uid://673goql1ko30"
 [autoload]
 
 Events="*res://global/events.gd"
+Shaker="*res://global/shaker.gd"
 
 [display]
 

@@ -1,6 +1,8 @@
 class_name Enemy
 extends Area2D
 
+const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
+
 @export var stats: EnemyStats : set = set_enemy_stats
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -72,11 +74,20 @@ func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
 	
-	stats. take_damage (damage)
+	sprite_2d.material = WHITE_SPRITE_MATERIAL
 	
-	if stats.health <= 0:
-		queue_free ()
-
+	var tween := create_tween()
+	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
+	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_interval(0.17)
+	
+	tween.finished.connect(
+		func():
+			sprite_2d.material = null
+			
+			if stats.health <= 0:
+				queue_free()
+	)
 
 func _on_area_entered(_area: Area2D) -> void:
 	arrow.show()
