@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_0nobi")
 id = "player_attack"
-type = 0
+type = null
 target = 1
 cost = 1
 icon = ExtResource("1_4opie")
