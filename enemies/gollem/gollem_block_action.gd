@@ -2,7 +2,7 @@ extends EnemyAction
 
 @export var block := 6
 
-func perfomr_action() -> void:
+func perform_action() -> void:
 	if not enemy or not target:
 		return
 	
