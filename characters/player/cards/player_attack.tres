@@ -1,12 +1,12 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dklvks874h6h"]
 
 [ext_resource type="Script" uid="uid://crg7rpk2ha6rh" path="res://characters/player/cards/player_attack.gd" id="1_0nobi"]
-[ext_resource type="Texture2D" uid="uid://dfcrv0mlbmpbs" path="res://art/solar_strike.png" id="1_4opie"]
+[ext_resource type="Texture2D" uid="uid://onckkmghhjrh" path="res://art/gladius.png" id="1_4opie"]
 
 [resource]
 script = ExtResource("1_0nobi")
 id = "player_attack"
-type = null
+type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_4opie")

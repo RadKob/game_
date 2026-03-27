@@ -6,7 +6,7 @@ signal reparent_requested(which_card_ui: CardUI)
 @export var card: Card : set = _set_card
 @export var char_stats: CharacterStats : set = _set_char_stats
 
-@onready var cost: Label = $Panel/CostPanel/Cost
+@onready var cost: Label = $Panel/Cost
 @onready var icon: TextureRect = $Panel/TexturePanel/Icon
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine

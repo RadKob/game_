@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c46banwopbrb3"
-path="res://.godot/imported/background.png-694afb2807fe739c9f0954541e14cf0b.ctex"
+uid="uid://onckkmghhjrh"
+path="res://.godot/imported/gladius.png-0652acc251145140fde3b6327d39472f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/background.png"
-dest_files=["res://.godot/imported/background.png-694afb2807fe739c9f0954541e14cf0b.ctex"]
+source_file="res://art/gladius.png"
+dest_files=["res://.godot/imported/gladius.png-0652acc251145140fde3b6327d39472f.ctex"]
 
 [params]
 
