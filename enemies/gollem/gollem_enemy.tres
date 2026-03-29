@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://rqc2wmxt6fo8"]
 
 [ext_resource type="PackedScene" uid="uid://bflhuqi8wbsqo" path="res://enemies/gollem/gollem_enemy_ai.tscn" id="1_2qm7x"]
-[ext_resource type="Texture2D" uid="uid://673goql1ko30" path="res://art/player64.png" id="1_38t1i"]
 [ext_resource type="Script" uid="uid://bwa126feqvop7" path="res://custom_resources/enemy_stats.gd" id="1_dwt26"]
+[ext_resource type="Texture2D" uid="uid://bu20k8yy4jh2y" path="res://art/gollem.png" id="2_2qm7x"]
 
 [resource]
 script = ExtResource("1_dwt26")
 ai = ExtResource("1_2qm7x")
 max_health = 10
-art = ExtResource("1_38t1i")
+art = ExtResource("2_2qm7x")
 animation_name = "idle"
 metadata/_custom_type_script = "uid://bwa126feqvop7"
