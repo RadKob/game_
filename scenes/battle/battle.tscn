@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c0b7kedg3svpp" path="res://scenes/ui/battle_over_panel.tscn" id="16_n6gaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
-size = Vector2(512.25, 173.25)
+size = Vector2(95, 57)
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_icoan")
@@ -35,7 +35,7 @@ metadata/_edit_lock_ = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(513.75, 174.75)
+position = Vector2(367, 102)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_7gynk")
 debug_color = Color(0, 0.6, 0.701961, 0.0823529)
@@ -44,7 +44,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.0823529)
 script = ExtResource("4_kd6yx")
 
 [node name="Enemy" parent="EnemyHandler" instance=ExtResource("2_agsc7")]
-position = Vector2(369, 86)
+position = Vector2(369, 102)
 stats = ExtResource("5_icoan")
 
 [node name="Player" parent="." instance=ExtResource("3_py4tk")]

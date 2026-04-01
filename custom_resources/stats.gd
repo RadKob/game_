@@ -4,6 +4,7 @@ extends Resource
 signal stats_changed
 
 @export var max_health := 1
+@export var max_block := 1
 @export var art: Texture
 @export var frames: SpriteFrames
 @export var animation_name: String = "idle"
@@ -33,5 +34,5 @@ func heal(amount : int) -> void:
 func create_instance() -> Resource:
 	var instance: Stats = self.duplicate()
 	instance.health = max_health
-	instance.block = 0
+	instance.block = max_block
 	return instance
