@@ -48,7 +48,7 @@ position = Vector2(369, 102)
 stats = ExtResource("5_icoan")
 
 [node name="Player" parent="." instance=ExtResource("3_py4tk")]
-position = Vector2(26, 320)
+position = Vector2(81, 35)
 stats = ExtResource("4_agsc7")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_pll4o")]
@@ -75,10 +75,10 @@ alignment = 1
 script = ExtResource("2_xd4uy")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("10_oiw7q")]
-offset_left = 65.0
-offset_top = 510.0
-offset_right = 111.0
-offset_bottom = 556.0
+offset_left = 121.0
+offset_top = 217.0
+offset_right = 167.0
+offset_bottom = 263.0
 char_stats = ExtResource("4_agsc7")
 
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("11_fisqk")]

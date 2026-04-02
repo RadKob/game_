@@ -2,15 +2,13 @@
 
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_4ncv3"]
 [ext_resource type="Script" uid="uid://ddrnmb75s2ynv" path="res://scenes/ui/enemy_stats_ui.gd" id="2_ppb7m"]
+[ext_resource type="Texture2D" uid="uid://03lhfp7a74l0" path="res://art/shield.png" id="3_iwi2o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwi2o"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irqh2"]
 bg_color = Color(1, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e76wc"]
-bg_color = Color(0, 0.705882, 1, 1)
 
 [node name="EnemyStatsUI" type="VBoxContainer"]
 custom_minimum_size = Vector2(80, 0)
@@ -29,11 +27,30 @@ size_flags_vertical = 4
 theme = ExtResource("1_4ncv3")
 script = ExtResource("2_ppb7m")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(50, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 1
 
-[node name="HealthBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="BlockTexture" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_iwi2o")
+
+[node name="BlockLabel" type="Label" parent="HBoxContainer/BlockTexture"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="HBoxContainer"]
 custom_minimum_size = Vector2(80, 5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -43,7 +60,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_irqh2")
 value = 50.0
 show_percentage = false
 
-[node name="HealthLabel" type="Label" parent="VBoxContainer/HealthBar"]
+[node name="HealthLabel" type="Label" parent="HBoxContainer/HealthBar"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -59,34 +76,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 13
 text = "6/6"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BlockBar" type="ProgressBar" parent="VBoxContainer"]
-custom_minimum_size = Vector2(80, 5)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/background = SubResource("StyleBoxFlat_iwi2o")
-theme_override_styles/fill = SubResource("StyleBoxFlat_e76wc")
-value = 50.0
-show_percentage = false
-
-[node name="BlockLabel" type="Label" parent="VBoxContainer/BlockBar"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -9.0
-offset_top = -8.0
-offset_right = 9.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 12
-text = "3/3"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -10,6 +10,7 @@ starting_deck = ExtResource("2_b8jje")
 cards_per_turn = 5
 max_mana = 3
 max_health = 35
+max_block = 1
 art = ExtResource("1_etqsa")
 animation_name = "idle"
 metadata/_custom_type_script = "uid://cirsvaokgrw2x"
