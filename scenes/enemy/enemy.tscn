@@ -47,14 +47,14 @@ scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 
 [node name="IntentUI" parent="." instance=ExtResource("6_cwlon")]
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -69.6667
-offset_top = -65.6667
-offset_right = -29.6667
-offset_bottom = -25.6667
-grow_vertical = 2
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -38.0
+offset_right = 11.0
+offset_bottom = -14.0
+grow_vertical = 0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

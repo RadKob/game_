@@ -1,22 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1gfg333si77r"]
+[gd_scene load_steps=5 format=3 uid="uid://b1gfg333si77r"]
 
-[ext_resource type="Texture2D" uid="uid://b2aa182a154kd" path="res://art/player128.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dgcbu3wpb3w8m" path="res://scenes/player/player.gd" id="1_dqkch"]
-[ext_resource type="Shader" uid="uid://b5snnxj2wewbe" path="res://scenes/player.gdshader" id="1_g2els"]
 [ext_resource type="Script" uid="uid://cirsvaokgrw2x" path="res://custom_resources/character_stats.gd" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://673goql1ko30" path="res://art/player64.png" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://fdwe35r8dfq5" path="res://scenes/ui/player_stats_ui.tscn" id="3_qhqgy"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
-shader = ExtResource("1_g2els")
 
 [node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_dqkch")
 stats = ExtResource("2_qlg0r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["player"]]
-material = SubResource("ShaderMaterial_qhqgy")
 position = Vector2(64, 64)
-texture = ExtResource("1_3vyb7")
+texture = ExtResource("3_dqkch")
 metadata/_edit_lock_ = true
 
 [node name="PlayerStatsUI" parent="." instance=ExtResource("3_qhqgy")]
