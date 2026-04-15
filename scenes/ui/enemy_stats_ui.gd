@@ -21,7 +21,7 @@ extends VBoxContainer
 func update_stats(stats: Stats) -> void:
 	health_bar.max_value = stats.max_health
 	health_bar.value = stats.health
-	health_label.text = str(stats.health)
+	health_label.text = str(stats.health) + " / " + str(stats.max_health)
 
 	#block_label.value = stats.block
 	block_label.text = str(stats.block)

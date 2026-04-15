@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://ceg20ts2igh34"]
 
-[ext_resource type="Texture2D" uid="uid://c46banwopbrb3" path="res://art/background.png" id="1_7gynk"]
 [ext_resource type="Script" uid="uid://c3luo0wwvwj1u" path="res://scenes/battle/battle.gd" id="1_icoan"]
 [ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy/enemy.tscn" id="2_agsc7"]
 [ext_resource type="Script" uid="uid://dq0msov8ilm6m" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
+[ext_resource type="Texture2D" uid="uid://2rrk2dykavlv" path="res://art/ResetBar.webp" id="3_n6gaa"]
 [ext_resource type="PackedScene" uid="uid://blrwwfk8m5ggn" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pll4o"]
 [ext_resource type="PackedScene" uid="uid://b1gfg333si77r" path="res://scenes/player.tscn" id="3_py4tk"]
-[ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/player/player.tres" id="4_agsc7"]
+[ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/player/bogdan_boner.tres" id="4_agsc7"]
 [ext_resource type="Script" uid="uid://o3jx4s11qygu" path="res://scenes/enemy/enemy_handler.gd" id="4_kd6yx"]
 [ext_resource type="Resource" uid="uid://rqc2wmxt6fo8" path="res://enemies/gollem/gollem_enemy.tres" id="5_icoan"]
 [ext_resource type="Script" uid="uid://s82cncuefpm6" path="res://scenes/ui/battle_ui.gd" id="6_mxe8n"]
@@ -27,7 +27,7 @@ metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.783523, 0.783523, 0.783523, 1)
-texture = ExtResource("1_7gynk")
+texture = ExtResource("3_n6gaa")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -48,7 +48,7 @@ position = Vector2(369, 102)
 stats = ExtResource("5_icoan")
 
 [node name="Player" parent="." instance=ExtResource("3_py4tk")]
-position = Vector2(81, 35)
+position = Vector2(145, 270)
 stats = ExtResource("4_agsc7")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_pll4o")]

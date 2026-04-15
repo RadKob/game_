@@ -24,8 +24,8 @@ SfxPlayer="*res://global/sfx_player.tscn"
 
 [display]
 
-window/size/viewport_width=512
-window/size/viewport_height=288
+window/size/viewport_width=1024
+window/size/viewport_height=576
 window/size/window_width_override=1024
 window/size/window_height_override=576
 window/stretch/mode="canvas_items"
@@ -33,6 +33,7 @@ window/stretch/mode="canvas_items"
 [gui]
 
 theme/custom="uid://c10kqjrk4hc5w"
+theme/custom_font="uid://8jyj4jfx6j73"
 
 [input]
 
