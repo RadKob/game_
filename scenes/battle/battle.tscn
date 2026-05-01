@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c3luo0wwvwj1u" path="res://scenes/battle/battle.gd" id="1_icoan"]
 [ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy/enemy.tscn" id="2_agsc7"]
 [ext_resource type="Script" uid="uid://dq0msov8ilm6m" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
-[ext_resource type="Texture2D" uid="uid://2rrk2dykavlv" path="res://art/ResetBar.webp" id="3_n6gaa"]
+[ext_resource type="Texture2D" uid="uid://cubu8lloacwju" path="res://art/game_background.png" id="3_n6gaa"]
 [ext_resource type="PackedScene" uid="uid://blrwwfk8m5ggn" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pll4o"]
 [ext_resource type="PackedScene" uid="uid://b1gfg333si77r" path="res://scenes/player.tscn" id="3_py4tk"]
 [ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/player/bogdan_boner.tres" id="4_agsc7"]
@@ -18,44 +18,71 @@
 [ext_resource type="PackedScene" uid="uid://c0b7kedg3svpp" path="res://scenes/ui/battle_over_panel.tscn" id="16_n6gaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
-size = Vector2(95, 57)
+size = Vector2(960, 324)
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_icoan")
 char_stats = ExtResource("4_agsc7")
 metadata/_edit_lock_ = true
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="ConteinersUI" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(960, 540)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TopUI" type="PanelContainer" parent="ConteinersUI"]
+custom_minimum_size = Vector2(960, 72)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ConteinersUI/TopUI"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MidUI" type="PanelContainer" parent="ConteinersUI"]
+custom_minimum_size = Vector2(960, 324)
+layout_mode = 2
+
+[node name="MidBackground" type="Sprite2D" parent="ConteinersUI/MidUI"]
 modulate = Color(0.783523, 0.783523, 0.783523, 1)
 texture = ExtResource("3_n6gaa")
 centered = false
-metadata/_edit_lock_ = true
 
-[node name="CardDropArea" type="Area2D" parent="."]
-collision_layer = 2
+[node name="Player" parent="ConteinersUI/MidUI" instance=ExtResource("3_py4tk")]
+position = Vector2(202, 199)
+stats = ExtResource("4_agsc7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(367, 102)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_7gynk")
-debug_color = Color(0, 0.6, 0.701961, 0.0823529)
-
-[node name="EnemyHandler" type="Node2D" parent="."]
+[node name="EnemyHandler" type="Node2D" parent="ConteinersUI/MidUI"]
+position = Vector2(249, 147)
 script = ExtResource("4_kd6yx")
 
-[node name="Enemy" parent="EnemyHandler" instance=ExtResource("2_agsc7")]
+[node name="Enemy" parent="ConteinersUI/MidUI/EnemyHandler" instance=ExtResource("2_agsc7")]
 position = Vector2(369, 102)
 stats = ExtResource("5_icoan")
 
-[node name="Player" parent="." instance=ExtResource("3_py4tk")]
-position = Vector2(145, 270)
-stats = ExtResource("4_agsc7")
+[node name="CardDropArea" type="Area2D" parent="ConteinersUI/MidUI"]
+position = Vector2(3, -36)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConteinersUI/MidUI/CardDropArea"]
+position = Vector2(476, 198)
+shape = SubResource("RectangleShape2D_7gynk")
+debug_color = Color(0, 0.6, 0.701961, 0.0823529)
+
+[node name="BotUI" type="PanelContainer" parent="ConteinersUI"]
+custom_minimum_size = Vector2(960, 144)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ConteinersUI/BotUI"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_pll4o")]
-
-[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
-script = ExtResource("7_fisqk")
-hand = NodePath("../BattleUI/Hand")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 script = ExtResource("6_mxe8n")
@@ -100,6 +127,10 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("12_mxe8n")
 text = "End Turn"
+
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+script = ExtResource("7_fisqk")
+hand = NodePath("../BattleUI/Hand")
 
 [node name="RedFlash" type="CanvasLayer" parent="."]
 layer = 2

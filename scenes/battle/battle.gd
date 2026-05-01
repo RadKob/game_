@@ -5,8 +5,8 @@ extends Node2D
 
 @onready var battle_ui: BattleUI = $BattleUI as BattleUI
 @onready var player_handler: PlayerHandler = $PlayerHandler as PlayerHandler
-@onready var enemy_handler: EnemyHandler = $EnemyHandler as EnemyHandler
-@onready var player: Player = $Player as Player
+@onready var enemy_handler: EnemyHandler = $ConteinersUI/MidUI/EnemyHandler as EnemyHandler
+@onready var player: Player = $ConteinersUI/MidUI/Player as Player
 
 func _ready() -> void:
 	var new_stats: CharacterStats = char_stats.create_instance()
