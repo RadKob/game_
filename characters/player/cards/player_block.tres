@@ -8,7 +8,7 @@ script = ExtResource("1_18m53")
 id = "player_block"
 type = 1
 target = 0
-cost = 2
+cost = 1
 icon = ExtResource("1_coy43")
 tooltip_text = "Gain [color=\"#FF0000\"]5[/color] block."
 metadata/_custom_type_script = "uid://cq0yslbbyqadv"

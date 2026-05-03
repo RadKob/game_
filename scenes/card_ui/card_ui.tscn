@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://do6vl01bx1air"]
+[gd_scene load_steps=15 format=3 uid="uid://do6vl01bx1air"]
 
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_gy3gl"]
 [ext_resource type="Script" uid="uid://irftvv7jgdlm" path="res://scenes/card_ui/card_ui.gd" id="2_els2s"]
 [ext_resource type="Texture2D" uid="uid://dfl5fxv5vwm11" path="res://art/card_background.png" id="3_js3ux"]
 [ext_resource type="Script" uid="uid://cihw86h3r77wv" path="res://scenes/card_ui/card_state_machine.gd" id="3_psaan"]
 [ext_resource type="Texture2D" uid="uid://onckkmghhjrh" path="res://art/gladius.png" id="4_js3ux"]
+[ext_resource type="Texture2D" uid="uid://dksssrpbpbii4" path="res://art/cost_orb_v.png" id="4_opj8w"]
 [ext_resource type="Script" uid="uid://btslow3tbc74p" path="res://scenes/card_ui/card_states/card_base_state.gd" id="4_orrkt"]
+[ext_resource type="Texture2D" uid="uid://ujpsd47q3l02" path="res://art/cost_orb_e.png" id="5_25o76"]
 [ext_resource type="Script" uid="uid://cflnwcjvukdme" path="res://scenes/card_ui/card_states/card_clicked_state.gd" id="5_yxx8x"]
 [ext_resource type="Script" uid="uid://lihy37huo7ie" path="res://scenes/card_ui/card_states/card_dragging_state.gd" id="6_ci03s"]
 [ext_resource type="Script" uid="uid://dc3yuvejy8e2w" path="res://scenes/card_ui/card_states/card_released_state.gd" id="7_js3ux"]
@@ -34,6 +36,8 @@ offset_right = 64.0
 offset_bottom = 96.0
 theme = ExtResource("1_gy3gl")
 script = ExtResource("2_els2s")
+active_orb = ExtResource("4_opj8w")
+inactive_orb = ExtResource("5_25o76")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -54,24 +58,35 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_js3ux")
 
-[node name="Cost" type="Label" parent="Panel"]
+[node name="CostContainer" type="VBoxContainer" parent="Panel/TextureRect"]
+custom_minimum_size = Vector2(72, 13)
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -3.5
-offset_top = -17.0
-offset_right = 3.5
+offset_left = -36.0
+offset_top = 6.0
+offset_right = 36.0
+offset_bottom = 19.0
 grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 12
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="OrbContainer" type="HBoxContainer" parent="Panel/TextureRect/CostContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="orb1" type="TextureRect" parent="Panel/TextureRect/CostContainer/OrbContainer"]
+layout_mode = 2
+texture = ExtResource("4_opj8w")
+
+[node name="orb2" type="TextureRect" parent="Panel/TextureRect/CostContainer/OrbContainer"]
+layout_mode = 2
+texture = ExtResource("4_opj8w")
+
+[node name="orb3" type="TextureRect" parent="Panel/TextureRect/CostContainer/OrbContainer"]
+layout_mode = 2
+texture = ExtResource("5_25o76")
 
 [node name="TexturePanel" type="Panel" parent="Panel"]
 clip_children = 2
@@ -102,21 +117,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_js3ux")
 stretch_mode = 5
-
-[node name="CardName" type="Label" parent="Panel"]
-z_index = 1
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -19.0
-offset_right = 19.0
-offset_bottom = 21.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 16
-text = "Strike"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 collision_mask = 2

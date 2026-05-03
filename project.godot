@@ -26,8 +26,8 @@ SfxPlayer="*res://global/sfx_player.tscn"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
-window/size/window_width_override=960
-window/size/window_height_override=540
+window/size/window_width_override=1440
+window/size/window_height_override=810
 window/stretch/mode="canvas_items"
 
 [gui]

@@ -6,7 +6,14 @@ signal reparent_requested(which_card_ui: CardUI)
 @export var card: Card : set = _set_card
 @export var char_stats: CharacterStats : set = _set_char_stats
 
-@onready var cost: Label = $Panel/Cost
+@onready var cost_orbs: Array[TextureRect] = [
+	$Panel/TextureRect/CostContainer/OrbContainer/orb1,
+	$Panel/TextureRect/CostContainer/OrbContainer/orb2,
+	$Panel/TextureRect/CostContainer/OrbContainer/orb3
+]
+@export var active_orb: Texture2D
+@export var inactive_orb: Texture2D
+
 @onready var icon: TextureRect = $Panel/TexturePanel/Icon
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
@@ -53,15 +60,26 @@ func _set_card(value: Card) -> void:
 		await ready
 	
 	card = value
-	cost.text = str(card.cost)
+	update_cost_orbs(card.cost)
 	icon.texture = card.icon
+
+func update_cost_orbs(current_cost: int) -> void:
+	current_cost = clamp(current_cost, 0, cost_orbs.size())
+	
+	for i in range(cost_orbs.size()):
+		if i < current_cost:
+			cost_orbs[i].texture = active_orb
+		else:
+			cost_orbs[i].texture = inactive_orb
 
 func _set_playable(value: bool) -> void:
 	playable = value
 	if not playable:
-		cost.add_theme_color_override("font_color", Color.RED)
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
+		#cost.add_theme_color_override("font_color", Color.RED)
 	else:
-		cost.remove_theme_color_override("font_color")
+		mouse_filter = Control.MOUSE_FILTER_STOP
+		#cost.remove_theme_color_override("font_color")
 
 func _set_char_stats(value: CharacterStats) -> void:
 	char_stats = value
