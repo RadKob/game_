@@ -14,7 +14,7 @@ signal reparent_requested(which_card_ui: CardUI)
 @export var active_orb: Texture2D
 @export var inactive_orb: Texture2D
 
-@onready var icon: TextureRect = $Panel/TexturePanel/Icon
+@onready var icon: Sprite2D = $Panel/TextureRect/Sprite2D
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var targets: Array[Node] = []

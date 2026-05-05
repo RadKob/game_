@@ -1,14 +1,14 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dklvks874h6h"]
 
 [ext_resource type="Script" uid="uid://crg7rpk2ha6rh" path="res://characters/player/cards/player_attack.gd" id="1_0nobi"]
-[ext_resource type="Texture2D" uid="uid://onckkmghhjrh" path="res://art/gladius.png" id="1_4opie"]
+[ext_resource type="Texture2D" uid="uid://cp66tnwp0skyy" path="res://art/sword.png" id="1_4opie"]
 
 [resource]
 script = ExtResource("1_0nobi")
 id = "player_attack"
 type = 0
 target = 1
-cost = 0
+cost = 1
 icon = ExtResource("1_4opie")
 tooltip_text = "Deal [color=\"#FF0000\"]6[/color] damage."
 metadata/_custom_type_script = "uid://cq0yslbbyqadv"

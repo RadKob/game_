@@ -1,32 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://do6vl01bx1air"]
+[gd_scene load_steps=14 format=3 uid="uid://do6vl01bx1air"]
 
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_gy3gl"]
 [ext_resource type="Script" uid="uid://irftvv7jgdlm" path="res://scenes/card_ui/card_ui.gd" id="2_els2s"]
 [ext_resource type="Texture2D" uid="uid://dfl5fxv5vwm11" path="res://art/card_background.png" id="3_js3ux"]
 [ext_resource type="Script" uid="uid://cihw86h3r77wv" path="res://scenes/card_ui/card_state_machine.gd" id="3_psaan"]
-[ext_resource type="Texture2D" uid="uid://onckkmghhjrh" path="res://art/gladius.png" id="4_js3ux"]
 [ext_resource type="Texture2D" uid="uid://dksssrpbpbii4" path="res://art/cost_orb_v.png" id="4_opj8w"]
 [ext_resource type="Script" uid="uid://btslow3tbc74p" path="res://scenes/card_ui/card_states/card_base_state.gd" id="4_orrkt"]
 [ext_resource type="Texture2D" uid="uid://ujpsd47q3l02" path="res://art/cost_orb_e.png" id="5_25o76"]
 [ext_resource type="Script" uid="uid://cflnwcjvukdme" path="res://scenes/card_ui/card_states/card_clicked_state.gd" id="5_yxx8x"]
 [ext_resource type="Script" uid="uid://lihy37huo7ie" path="res://scenes/card_ui/card_states/card_dragging_state.gd" id="6_ci03s"]
+[ext_resource type="Texture2D" uid="uid://cp66tnwp0skyy" path="res://art/sword.png" id="6_opj8w"]
 [ext_resource type="Script" uid="uid://dc3yuvejy8e2w" path="res://scenes/card_ui/card_states/card_released_state.gd" id="7_js3ux"]
 [ext_resource type="Script" uid="uid://kr1ikrqkypmr" path="res://scenes/card_ui/card_states/card_aiming_state.gd" id="8_yxx8x"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js3ux"]
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-corner_detail = 20
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gy3gl"]
-size = Vector2(64, 96)
+size = Vector2(80, 120)
 
 [node name="CardUI" type="Control"]
 custom_minimum_size = Vector2(80, 120)
@@ -88,35 +76,10 @@ texture = ExtResource("4_opj8w")
 layout_mode = 2
 texture = ExtResource("5_25o76")
 
-[node name="TexturePanel" type="Panel" parent="Panel"]
-clip_children = 2
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_js3ux")
-
-[node name="Icon" type="TextureRect" parent="Panel/TexturePanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("4_js3ux")
-stretch_mode = 5
+[node name="Sprite2D" type="Sprite2D" parent="Panel/TextureRect"]
+position = Vector2(40, 60)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_opj8w")
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 collision_mask = 2
@@ -124,7 +87,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
 z_index = 1
-position = Vector2(32, 48)
+position = Vector2(40, 60)
 shape = SubResource("RectangleShape2D_gy3gl")
 metadata/_edit_lock_ = true
 
