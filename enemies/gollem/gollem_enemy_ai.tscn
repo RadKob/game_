@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bflhuqi8wbsqo"]
+[gd_scene load_steps=11 format=3 uid="uid://bflhuqi8wbsqo"]
 
 [ext_resource type="Script" uid="uid://budxgr4r7d82f" path="res://scenes/enemy/enemy_action_picker.gd" id="1_0wf5s"]
 [ext_resource type="Script" uid="uid://c8sgtps33tl2n" path="res://enemies/gollem/gollem_attack_action.gd" id="2_bc0uy"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://daxyv8t6x5mgc" path="res://custom_resources/intent.gd" id="4_cnbc2"]
 [ext_resource type="Script" uid="uid://bksn11wbp1b4r" path="res://enemies/gollem/gollem_mega_block_action.gd" id="4_cp78g"]
 [ext_resource type="Texture2D" uid="uid://hr1n8vlhu4g7" path="res://art/enemy_shield_intent.png" id="6_8xi5c"]
-[ext_resource type="Texture2D" uid="uid://dfcrv0mlbmpbs" path="res://art/solar_strike.png" id="8_8xi5c"]
 
 [sub_resource type="Resource" id="Resource_8xi5c"]
 script = ExtResource("4_cnbc2")
@@ -24,7 +23,7 @@ metadata/_custom_type_script = "uid://daxyv8t6x5mgc"
 [sub_resource type="Resource" id="Resource_c12kw"]
 script = ExtResource("4_cnbc2")
 number = ""
-icon = ExtResource("8_8xi5c")
+icon = ExtResource("6_8xi5c")
 metadata/_custom_type_script = "uid://daxyv8t6x5mgc"
 
 [node name="GollemEnemyAi" type="Node"]

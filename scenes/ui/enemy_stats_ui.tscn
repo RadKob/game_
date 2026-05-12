@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjk3306qtyldi"]
+[gd_scene load_steps=5 format=3 uid="uid://bjk3306qtyldi"]
 
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_4ncv3"]
 [ext_resource type="Script" uid="uid://ddrnmb75s2ynv" path="res://scenes/ui/enemy_stats_ui.gd" id="2_ppb7m"]
-[ext_resource type="Texture2D" uid="uid://03lhfp7a74l0" path="res://art/shield.png" id="3_iwi2o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwi2o"]
 bg_color = Color(0, 0, 0, 1)
@@ -29,30 +28,11 @@ script = ExtResource("2_ppb7m")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 1
 
-[node name="BlockTexture" type="TextureRect" parent="HBoxContainer"]
-custom_minimum_size = Vector2(16, 16)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_iwi2o")
-
-[node name="BlockLabel" type="Label" parent="HBoxContainer/BlockTexture"]
+[node name="BlockLabel" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -9.0
-offset_right = 4.0
-offset_bottom = 9.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 14
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1

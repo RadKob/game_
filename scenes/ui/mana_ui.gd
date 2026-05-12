@@ -2,7 +2,7 @@ class_name ManaUI
 extends Panel
 
 @export var char_stats: CharacterStats : set = _set_char_stats
-@onready var mana_label: Label = $ManaLabel
+@onready var mana_label: Label = $TextureRect/ManaLabel
 
 func _ready() -> void:
 	await get_tree().create_timer(2).timeout

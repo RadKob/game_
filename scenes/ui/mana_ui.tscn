@@ -1,29 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://cru2svon7ow8p"]
+[gd_scene load_steps=5 format=3 uid="uid://cru2svon7ow8p"]
 
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_rpnp3"]
 [ext_resource type="Script" uid="uid://c6cvjqdj2emuu" path="res://scenes/ui/mana_ui.gd" id="2_jwxui"]
+[ext_resource type="Texture2D" uid="uid://ccx48bkhn2nrd" path="res://art/mana_orb.png" id="3_pxfgv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwxui"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxfgv"]
 draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.662745, 0.662745, 0.662745, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [node name="ManaUI" type="Panel"]
 custom_minimum_size = Vector2(46, 46)
 offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("1_rpnp3")
-theme_override_styles/panel = SubResource("StyleBoxFlat_jwxui")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxfgv")
 script = ExtResource("2_jwxui")
 
-[node name="ManaLabel" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pxfgv")
+
+[node name="ManaLabel" type="Label" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
