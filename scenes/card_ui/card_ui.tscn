@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ujpsd47q3l02" path="res://art/cost_orb_e.png" id="5_25o76"]
 [ext_resource type="Script" uid="uid://cflnwcjvukdme" path="res://scenes/card_ui/card_states/card_clicked_state.gd" id="5_yxx8x"]
 [ext_resource type="Script" uid="uid://lihy37huo7ie" path="res://scenes/card_ui/card_states/card_dragging_state.gd" id="6_ci03s"]
-[ext_resource type="Texture2D" uid="uid://cp66tnwp0skyy" path="res://art/sword.png" id="6_opj8w"]
+[ext_resource type="Texture2D" uid="uid://cp66tnwp0skyy" path="res://art/cards_icons/sword.png" id="6_opj8w"]
 [ext_resource type="Script" uid="uid://dc3yuvejy8e2w" path="res://scenes/card_ui/card_states/card_released_state.gd" id="7_js3ux"]
 [ext_resource type="Script" uid="uid://kr1ikrqkypmr" path="res://scenes/card_ui/card_states/card_aiming_state.gd" id="8_yxx8x"]
 

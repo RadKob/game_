@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cubu8lloacwju" path="res://art/game_background.png" id="3_n6gaa"]
 [ext_resource type="PackedScene" uid="uid://blrwwfk8m5ggn" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pll4o"]
 [ext_resource type="PackedScene" uid="uid://b1gfg333si77r" path="res://scenes/player.tscn" id="3_py4tk"]
-[ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/player/bogdan_boner.tres" id="4_agsc7"]
+[ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/player/player_one.tres" id="4_agsc7"]
 [ext_resource type="Script" uid="uid://o3jx4s11qygu" path="res://scenes/enemy/enemy_handler.gd" id="4_kd6yx"]
 [ext_resource type="Resource" uid="uid://rqc2wmxt6fo8" path="res://enemies/gollem/gollem_enemy.tres" id="5_icoan"]
 [ext_resource type="Script" uid="uid://s82cncuefpm6" path="res://scenes/ui/battle_ui.gd" id="6_mxe8n"]
@@ -54,7 +54,7 @@ texture = ExtResource("3_n6gaa")
 centered = false
 
 [node name="Player" parent="ConteinersUI/MidUI" instance=ExtResource("3_py4tk")]
-position = Vector2(208, 177)
+position = Vector2(193, 188)
 stats = ExtResource("4_agsc7")
 
 [node name="EnemyHandler" type="Node2D" parent="ConteinersUI/MidUI"]
@@ -63,6 +63,7 @@ script = ExtResource("4_kd6yx")
 
 [node name="Enemy" parent="ConteinersUI/MidUI/EnemyHandler" instance=ExtResource("2_agsc7")]
 position = Vector2(369, 102)
+scale = Vector2(1, 1)
 stats = ExtResource("5_icoan")
 
 [node name="CardDropArea" type="Area2D" parent="ConteinersUI/MidUI"]

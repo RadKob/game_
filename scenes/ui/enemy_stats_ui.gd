@@ -18,7 +18,7 @@ func update_stats(stats: Stats) -> void:
 	health_label.text = str(stats.health) + " / " + str(stats.max_health)
 
 	block_label.text = str(stats.block)
-	block_label.visible = stats.block > 0
+	#block_label.visible = stats.block > 0
 
 func _on_health_mouse_entered() -> void:
 	var tween := create_tween()
