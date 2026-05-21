@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ceg20ts2igh34"]
+[gd_scene load_steps=19 format=3 uid="uid://ceg20ts2igh34"]
 
 [ext_resource type="Script" uid="uid://c3luo0wwvwj1u" path="res://scenes/battle/battle.gd" id="1_icoan"]
 [ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy/enemy.tscn" id="2_agsc7"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://b1gfg333si77r" path="res://scenes/player.tscn" id="3_py4tk"]
 [ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/player/player_one.tres" id="4_agsc7"]
 [ext_resource type="Script" uid="uid://o3jx4s11qygu" path="res://scenes/enemy/enemy_handler.gd" id="4_kd6yx"]
-[ext_resource type="Resource" uid="uid://rqc2wmxt6fo8" path="res://enemies/gollem/gollem_enemy.tres" id="5_icoan"]
+[ext_resource type="Resource" uid="uid://cv6ghs0qyj4qo" path="res://characters/player/player_two.tres" id="5_6ofp8"]
 [ext_resource type="Script" uid="uid://s82cncuefpm6" path="res://scenes/ui/battle_ui.gd" id="6_mxe8n"]
 [ext_resource type="Script" uid="uid://2rtk5svu7ewm" path="res://scenes/player/player_handler.gd" id="7_fisqk"]
+[ext_resource type="Resource" uid="uid://8bw6meclqtpq" path="res://enemies/rat/rat_enemy.tres" id="7_n6gaa"]
 [ext_resource type="PackedScene" uid="uid://cru2svon7ow8p" path="res://scenes/ui/mana_ui.tscn" id="10_oiw7q"]
 [ext_resource type="PackedScene" uid="uid://dvqw5x0rllmhs" path="res://scenes/ui/tooltip.tscn" id="11_fisqk"]
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="12_mxe8n"]
@@ -55,7 +56,7 @@ centered = false
 
 [node name="Player" parent="ConteinersUI/MidUI" instance=ExtResource("3_py4tk")]
 position = Vector2(193, 188)
-stats = ExtResource("4_agsc7")
+stats = ExtResource("5_6ofp8")
 
 [node name="EnemyHandler" type="Node2D" parent="ConteinersUI/MidUI"]
 position = Vector2(249, 147)
@@ -64,7 +65,7 @@ script = ExtResource("4_kd6yx")
 [node name="Enemy" parent="ConteinersUI/MidUI/EnemyHandler" instance=ExtResource("2_agsc7")]
 position = Vector2(369, 102)
 scale = Vector2(1, 1)
-stats = ExtResource("5_icoan")
+stats = ExtResource("7_n6gaa")
 
 [node name="CardDropArea" type="Area2D" parent="ConteinersUI/MidUI"]
 position = Vector2(3, -36)

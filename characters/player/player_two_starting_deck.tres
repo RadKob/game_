@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardPile" load_steps=6 format=3 uid="uid://dmqwe8j6nlp3q"]
+
+[ext_resource type="Script" uid="uid://cq0yslbbyqadv" path="res://custom_resources/card.gd" id="1_tncjj"]
+[ext_resource type="Script" uid="uid://qht146ku6obe" path="res://custom_resources/card_pile.gd" id="2_pko1g"]
+[ext_resource type="Resource" uid="uid://nyyce41wl4a7" path="res://characters/player/cards/player_block.tres" id="2_r47oo"]
+[ext_resource type="Resource" uid="uid://dklvks874h6h" path="res://characters/player/cards/player_attack.tres" id="3_i2m6f"]
+[ext_resource type="Resource" uid="uid://h13cjqb62qdn" path="res://characters/player/cards/player_bash.tres" id="4_6a3d5"]
+
+[resource]
+script = ExtResource("2_pko1g")
+cards = Array[ExtResource("1_tncjj")]([ExtResource("2_r47oo"), ExtResource("2_r47oo"), ExtResource("2_r47oo"), ExtResource("3_i2m6f"), ExtResource("3_i2m6f"), ExtResource("3_i2m6f"), ExtResource("4_6a3d5"), ExtResource("4_6a3d5"), ExtResource("4_6a3d5"), ExtResource("4_6a3d5")])
+metadata/_custom_type_script = "uid://qht146ku6obe"
