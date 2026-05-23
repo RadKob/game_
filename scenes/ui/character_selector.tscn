@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://qigt454rt0sx"]
+[gd_scene load_steps=12 format=3 uid="uid://qigt454rt0sx"]
 
 [ext_resource type="Script" uid="uid://walyk1vp8li7" path="res://scenes/ui/character_selector.gd" id="1_to3sr"]
+[ext_resource type="Resource" uid="uid://b7s7vjudf2kpi" path="res://scenes/run/run_startup.tres" id="2_gl58c"]
 [ext_resource type="Texture2D" uid="uid://dgxqrqtrwqal2" path="res://art/players/player_1.png" id="2_to3sr"]
 [ext_resource type="Texture2D" uid="uid://cp66tnwp0skyy" path="res://art/cards_icons/sword.png" id="3_uigap"]
 [ext_resource type="Texture2D" uid="uid://03lhfp7a74l0" path="res://art/cards_icons/shield.png" id="4_to3sr"]
@@ -33,6 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_to3sr")
+run_startup = ExtResource("2_gl58c")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
