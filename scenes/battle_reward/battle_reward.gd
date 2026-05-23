@@ -1,4 +1,4 @@
 extends Control
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	Events.battle_reward_exited.emit()
