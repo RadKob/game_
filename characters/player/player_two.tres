@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://cv6ghs0qyj4qo"]
 
 [ext_resource type="Script" uid="uid://cirsvaokgrw2x" path="res://custom_resources/character_stats.gd" id="1_krkdp"]
-[ext_resource type="Texture2D" uid="uid://b6u0amiydc36k" path="res://art/player_2.png" id="1_u575j"]
+[ext_resource type="Texture2D" uid="uid://b6u0amiydc36k" path="res://art/players/player_2.png" id="1_u575j"]
 [ext_resource type="Resource" uid="uid://dmqwe8j6nlp3q" path="res://characters/player/player_two_starting_deck.tres" id="3_qa6x3"]
 
 [resource]

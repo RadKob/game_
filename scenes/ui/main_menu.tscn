@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://2mugngi7vslb"]
+
+[ext_resource type="Texture2D" uid="uid://dgxqrqtrwqal2" path="res://art/players/player_1.png" id="1_1g8jr"]
+[ext_resource type="Script" uid="uid://clujmtndm3jkm" path="res://scenes/ui/main_menu.gd" id="1_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://b6u0amiydc36k" path="res://art/players/player_2.png" id="2_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://bvdu52rc8vsxx" path="res://art/players/player_3.png" id="3_x2yvf"]
+
+[sub_resource type="Gradient" id="Gradient_uhagc"]
+colors = PackedColorArray(0, 0, 0, 1, 0.235294, 0.235294, 0.235294, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_btxxm"]
+gradient = SubResource("Gradient_uhagc")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_wb0q5"]
+font_size = 32
+shadow_size = 5
+shadow_color = Color(0.235294, 0.235294, 0.235294, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m1kxf")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_btxxm")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -170.0
+offset_right = 257.0
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Little Color Hood's Adventure"
+label_settings = SubResource("LabelSettings_wb0q5")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -75.0
+offset_right = 100.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "Continue"
+
+[node name="NewRun" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "New Run"
+
+[node name="Compendium" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Compendium"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+
+[node name="P1" type="Sprite2D" parent="."]
+position = Vector2(135, 275)
+scale = Vector2(3, 3)
+texture = ExtResource("1_1g8jr")
+
+[node name="P2" type="Sprite2D" parent="."]
+position = Vector2(210, 340)
+scale = Vector2(3, 3)
+texture = ExtResource("2_m1kxf")
+
+[node name="P3" type="Sprite2D" parent="."]
+position = Vector2(135, 405)
+scale = Vector2(3, 3)
+texture = ExtResource("3_x2yvf")
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Compendium" to="." method="_on_compendium_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
