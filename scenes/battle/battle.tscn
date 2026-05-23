@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ceg20ts2igh34"]
+[gd_scene load_steps=27 format=3 uid="uid://ceg20ts2igh34"]
 
 [ext_resource type="Script" uid="uid://c3luo0wwvwj1u" path="res://scenes/battle/battle.gd" id="1_icoan"]
 [ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy/enemy.tscn" id="2_agsc7"]
@@ -6,17 +6,40 @@
 [ext_resource type="Texture2D" uid="uid://cubu8lloacwju" path="res://art/game_background.png" id="3_n6gaa"]
 [ext_resource type="PackedScene" uid="uid://blrwwfk8m5ggn" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pll4o"]
 [ext_resource type="PackedScene" uid="uid://b1gfg333si77r" path="res://scenes/player.tscn" id="3_py4tk"]
-[ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/player/player_one.tres" id="4_agsc7"]
+[ext_resource type="Resource" uid="uid://c1w523ku0mouj" path="res://characters/warrior/warrior.tres" id="4_agsc7"]
 [ext_resource type="Script" uid="uid://o3jx4s11qygu" path="res://scenes/enemy/enemy_handler.gd" id="4_kd6yx"]
-[ext_resource type="Resource" uid="uid://cv6ghs0qyj4qo" path="res://characters/player/player_two.tres" id="5_6ofp8"]
+[ext_resource type="Texture2D" uid="uid://b6u0amiydc36k" path="res://art/players/player_2.png" id="5_156m4"]
 [ext_resource type="Script" uid="uid://s82cncuefpm6" path="res://scenes/ui/battle_ui.gd" id="6_mxe8n"]
+[ext_resource type="Script" uid="uid://cirsvaokgrw2x" path="res://custom_resources/character_stats.gd" id="6_pyfix"]
+[ext_resource type="Script" uid="uid://cq0yslbbyqadv" path="res://custom_resources/card.gd" id="7_8eh2s"]
 [ext_resource type="Script" uid="uid://2rtk5svu7ewm" path="res://scenes/player/player_handler.gd" id="7_fisqk"]
 [ext_resource type="Resource" uid="uid://8bw6meclqtpq" path="res://enemies/rat/rat_enemy.tres" id="7_n6gaa"]
+[ext_resource type="Resource" uid="uid://nyyce41wl4a7" path="res://characters/warrior/cards/player_block.tres" id="8_e48mi"]
+[ext_resource type="Resource" uid="uid://dklvks874h6h" path="res://characters/warrior/cards/player_attack.tres" id="9_ueicy"]
+[ext_resource type="Resource" uid="uid://h13cjqb62qdn" path="res://characters/warrior/cards/player_bash.tres" id="10_n5ix6"]
 [ext_resource type="PackedScene" uid="uid://cru2svon7ow8p" path="res://scenes/ui/mana_ui.tscn" id="10_oiw7q"]
 [ext_resource type="PackedScene" uid="uid://dvqw5x0rllmhs" path="res://scenes/ui/tooltip.tscn" id="11_fisqk"]
+[ext_resource type="Script" uid="uid://qht146ku6obe" path="res://custom_resources/card_pile.gd" id="11_tnndc"]
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="12_mxe8n"]
 [ext_resource type="Script" uid="uid://cv8nhp6ljpoms" path="res://scenes/ui/red_flash.gd" id="15_t1kk3"]
 [ext_resource type="PackedScene" uid="uid://c0b7kedg3svpp" path="res://scenes/ui/battle_over_panel.tscn" id="16_n6gaa"]
+
+[sub_resource type="Resource" id="Resource_k6ux7"]
+script = ExtResource("11_tnndc")
+cards = Array[ExtResource("7_8eh2s")]([ExtResource("8_e48mi"), ExtResource("8_e48mi"), ExtResource("8_e48mi"), ExtResource("9_ueicy"), ExtResource("9_ueicy"), ExtResource("9_ueicy"), ExtResource("10_n5ix6"), ExtResource("10_n5ix6"), ExtResource("10_n5ix6"), ExtResource("10_n5ix6")])
+metadata/_custom_type_script = "uid://qht146ku6obe"
+
+[sub_resource type="Resource" id="Resource_1oulw"]
+script = ExtResource("6_pyfix")
+character_name = ""
+description = ""
+starting_deck = SubResource("Resource_k6ux7")
+cards_per_turn = 5
+max_mana = 3
+max_health = 50
+art = ExtResource("5_156m4")
+animation_name = "idle"
+metadata/_custom_type_script = "uid://cirsvaokgrw2x"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(960, 324)
@@ -56,7 +79,7 @@ centered = false
 
 [node name="Player" parent="ConteinersUI/MidUI" instance=ExtResource("3_py4tk")]
 position = Vector2(193, 188)
-stats = ExtResource("5_6ofp8")
+stats = SubResource("Resource_1oulw")
 
 [node name="EnemyHandler" type="Node2D" parent="ConteinersUI/MidUI"]
 position = Vector2(249, 147)

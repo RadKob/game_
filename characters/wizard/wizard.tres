@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=3 format=3 uid="uid://bi8ytkoiwlbtx"]
+
+[ext_resource type="Script" uid="uid://cirsvaokgrw2x" path="res://custom_resources/character_stats.gd" id="1_idu3k"]
+[ext_resource type="Texture2D" uid="uid://b6u0amiydc36k" path="res://art/players/player_2.png" id="1_ielc2"]
+
+[resource]
+script = ExtResource("1_idu3k")
+character_name = "Wizzard"
+description = "Mercy is expensive. 
+Mana is cheaper."
+portrait = ExtResource("1_ielc2")
+cards_per_turn = 5
+max_mana = 3
+max_health = 66
+art = ExtResource("1_ielc2")
+animation_name = "idle"
+metadata/_custom_type_script = "uid://cirsvaokgrw2x"

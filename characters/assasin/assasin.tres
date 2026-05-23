@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=3 format=3 uid="uid://d2c0l5q5v7pu8"]
+
+[ext_resource type="Script" uid="uid://cirsvaokgrw2x" path="res://custom_resources/character_stats.gd" id="1_58c3u"]
+[ext_resource type="Texture2D" uid="uid://bvdu52rc8vsxx" path="res://art/players/player_3.png" id="1_dxjs2"]
+
+[resource]
+script = ExtResource("1_58c3u")
+character_name = "Assasin"
+description = "The dagger is not the threat.
+The Assassin is."
+portrait = ExtResource("1_dxjs2")
+cards_per_turn = 5
+max_mana = 3
+max_health = 70
+art = ExtResource("1_dxjs2")
+animation_name = "idle"
+metadata/_custom_type_script = "uid://cirsvaokgrw2x"
