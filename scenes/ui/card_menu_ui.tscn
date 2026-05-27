@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://7xn2u2464ivk"]
+
+[ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_spm00"]
+[ext_resource type="Script" uid="uid://cv2q4pmuo3ehd" path="res://scenes/ui/card_menu_ui.gd" id="2_lcbw5"]
+[ext_resource type="Resource" uid="uid://dklvks874h6h" path="res://characters/warrior/cards/player_attack.tres" id="2_wcoov"]
+[ext_resource type="Texture2D" uid="uid://dksssrpbpbii4" path="res://art/cost_orb_v.png" id="3_6mrvh"]
+[ext_resource type="Texture2D" uid="uid://ujpsd47q3l02" path="res://art/cost_orb_e.png" id="4_kqc5b"]
+[ext_resource type="Texture2D" uid="uid://dfl5fxv5vwm11" path="res://art/card_background.png" id="5_f3d54"]
+[ext_resource type="Texture2D" uid="uid://cp66tnwp0skyy" path="res://art/cards_icons/sword.png" id="6_1opq8"]
+
+[node name="CardMenuUI" type="CenterContainer"]
+offset_right = 80.0
+offset_bottom = 120.0
+size_flags_horizontal = 3
+script = ExtResource("2_lcbw5")
+card = ExtResource("2_wcoov")
+active_orb = ExtResource("3_6mrvh")
+inactive_orb = ExtResource("4_kqc5b")
+
+[node name="Visuals" type="Control" parent="."]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+theme = ExtResource("1_spm00")
+
+[node name="Panel" type="Panel" parent="Visuals"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Visuals/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_f3d54")
+
+[node name="CostContainer" type="VBoxContainer" parent="Visuals/Panel/TextureRect"]
+custom_minimum_size = Vector2(72, 13)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 6.0
+offset_right = 36.0
+offset_bottom = 19.0
+grow_horizontal = 2
+metadata/_edit_lock_ = true
+
+[node name="OrbContainer" type="HBoxContainer" parent="Visuals/Panel/TextureRect/CostContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="orb1" type="TextureRect" parent="Visuals/Panel/TextureRect/CostContainer/OrbContainer"]
+layout_mode = 2
+texture = ExtResource("3_6mrvh")
+
+[node name="orb2" type="TextureRect" parent="Visuals/Panel/TextureRect/CostContainer/OrbContainer"]
+layout_mode = 2
+texture = ExtResource("3_6mrvh")
+
+[node name="orb3" type="TextureRect" parent="Visuals/Panel/TextureRect/CostContainer/OrbContainer"]
+layout_mode = 2
+texture = ExtResource("4_kqc5b")
+
+[node name="TextureRect" type="TextureRect" parent="Visuals/Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -24.5
+offset_right = 24.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(24.5, 24.5)
+texture = ExtResource("6_1opq8")
+
+[connection signal="gui_input" from="Visuals" to="." method="_on_visuals_gui_input"]
+[connection signal="mouse_entered" from="Visuals" to="." method="_on_visuals_mouse_entered"]
+[connection signal="mouse_exited" from="Visuals" to="." method="_on_visuals_mouse_exited"]
