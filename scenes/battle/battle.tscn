@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ceg20ts2igh34"]
+[gd_scene load_steps=29 format=3 uid="uid://ceg20ts2igh34"]
 
 [ext_resource type="Script" uid="uid://c3luo0wwvwj1u" path="res://scenes/battle/battle.gd" id="1_icoan"]
 [ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy/enemy.tscn" id="2_agsc7"]
@@ -23,6 +23,8 @@
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="12_mxe8n"]
 [ext_resource type="Script" uid="uid://cv8nhp6ljpoms" path="res://scenes/ui/red_flash.gd" id="15_t1kk3"]
 [ext_resource type="PackedScene" uid="uid://c0b7kedg3svpp" path="res://scenes/ui/battle_over_panel.tscn" id="16_n6gaa"]
+[ext_resource type="PackedScene" uid="uid://ep1yu2ghtupu" path="res://scenes/ui/card_pile_opener.tscn" id="18_pyfix"]
+[ext_resource type="PackedScene" uid="uid://4ggv34465iw1" path="res://scenes/ui/card_pile_view.tscn" id="25_8eh2s"]
 
 [sub_resource type="Resource" id="Resource_k6ux7"]
 script = ExtResource("11_tnndc")
@@ -111,7 +113,6 @@ color = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(960, 144)
 layout_mode = 2
 theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
 
 [node name="BattleUI" type="CanvasLayer" parent="ConteinersUI/BotUI/HBoxContainer" groups=["ui_layer"]]
 script = ExtResource("6_mxe8n")
@@ -121,7 +122,6 @@ offset_left = -75.0
 offset_top = 75.0
 offset_right = 75.0
 offset_bottom = 155.0
-metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI"]
 custom_minimum_size = Vector2(224, 144)
@@ -132,23 +132,42 @@ anchor_bottom = 1.0
 offset_top = -144.0
 offset_right = 224.0
 grow_vertical = 0
-metadata/_edit_lock_ = true
+size_flags_horizontal = 4
 
-[node name="ManaUI" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control" instance=ExtResource("10_oiw7q")]
+[node name="VBoxContainer" type="VBoxContainer" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ManaUI" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control/VBoxContainer" instance=ExtResource("10_oiw7q")]
+layout_mode = 2
+size_flags_horizontal = 4
+char_stats = ExtResource("4_agsc7")
+
+[node name="DrawPileButton" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control/VBoxContainer" node_paths=PackedStringArray("counter") instance=ExtResource("18_pyfix")]
+unique_name_in_owner = true
+layout_mode = 2
+counter = NodePath("Counter")
+
+[node name="Counter" type="Label" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control/VBoxContainer/DrawPileButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -23.0
-offset_right = 23.0
-offset_bottom = 23.0
+offset_left = -20.0
+offset_top = -7.0
+offset_right = 20.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
-char_stats = ExtResource("4_agsc7")
-metadata/_edit_lock_ = true
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Control2" type="Control" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI"]
 custom_minimum_size = Vector2(512, 144)
@@ -163,7 +182,6 @@ offset_top = -144.0
 offset_right = 256.0
 grow_horizontal = 2
 grow_vertical = 0
-metadata/_edit_lock_ = true
 
 [node name="Hand" type="HBoxContainer" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control2"]
 layout_mode = 1
@@ -180,7 +198,6 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 script = ExtResource("2_xd4uy")
-metadata/_edit_lock_ = true
 
 [node name="Control3" type="Control" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI"]
 custom_minimum_size = Vector2(224, 144)
@@ -194,25 +211,44 @@ offset_left = -224.0
 offset_top = -144.0
 grow_horizontal = 0
 grow_vertical = 0
-metadata/_edit_lock_ = true
 
-[node name="EndTurnButton" type="Button" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndTurnButton" type="Button" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control3/VBoxContainer"]
 unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("12_mxe8n")
+text = "End Turn"
+
+[node name="DiscardPileButton" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control3/VBoxContainer" node_paths=PackedStringArray("counter") instance=ExtResource("18_pyfix")]
+unique_name_in_owner = true
+layout_mode = 2
+counter = NodePath("Counter")
+
+[node name="Counter" type="Label" parent="ConteinersUI/BotUI/HBoxContainer/BattleUI/Control3/VBoxContainer/DiscardPileButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -11.0
-offset_right = 36.0
-offset_bottom = 11.0
+offset_left = -20.0
+offset_top = -7.0
+offset_right = 20.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("12_mxe8n")
-text = "End Turn"
-metadata/_edit_lock_ = true
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_pll4o")]
 
@@ -241,4 +277,15 @@ one_shot = true
 layer = 2
 
 [node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("16_n6gaa")]
+visible = false
+
+[node name="CardPileViews" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="DrawPileView" parent="CardPileViews" instance=ExtResource("25_8eh2s")]
+unique_name_in_owner = true
+visible = false
+
+[node name="DiscardPileView" parent="CardPileViews" instance=ExtResource("25_8eh2s")]
+unique_name_in_owner = true
 visible = false
