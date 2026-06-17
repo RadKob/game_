@@ -89,7 +89,7 @@ script = ExtResource("4_kd6yx")
 
 [node name="Enemy" parent="ConteinersUI/MidUI/EnemyHandler" instance=ExtResource("2_agsc7")]
 position = Vector2(369, 102)
-scale = Vector2(1, 1)
+scale = Vector2(1.5, 1.5)
 stats = ExtResource("7_n6gaa")
 
 [node name="CardDropArea" type="Area2D" parent="ConteinersUI/MidUI"]
