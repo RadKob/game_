@@ -3,8 +3,8 @@ extends CanvasLayer
 
 @export var char_stats: CharacterStats : set = _set_char_stats
 
-@onready var hand: Hand = $Control2/Hand as Hand
-@onready var mana_ui: ManaUI = $Control/VBoxContainer/ManaUI as ManaUI
+@onready var hand: Hand = $VBoxContainer/BotUI/ControlHand/Hand
+@onready var mana_ui: ManaUI = $ManaControl/ManaUI as ManaUI
 @onready var end_turn_button: Button = %EndTurnButton
 @onready var draw_pile_button: CardPileOpener = %DrawPileButton
 @onready var discard_pile_button: CardPileOpener = %DiscardPileButton

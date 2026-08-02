@@ -3,12 +3,15 @@ extends Resource
 
 enum Type {ATTACK, SKILL, POWER}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
+enum Rarity {COMMON, RARE, EPIC}
 
 @export_group("Card Attributes")
 @export var id: String
 @export var type: Type
+@export var rarity: Rarity
 @export var target: Target
 @export var cost: int
+@export var value: int
 
 @export_group("Card Visuals")
 @export var icon: Texture

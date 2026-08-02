@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://8bw6meclqtpq"]
+
+[ext_resource type="PackedScene" uid="uid://c3c3j8uts8a24" path="res://enemies/maciek/maciek_enemy_ai.tscn" id="1_peiwi"]
+[ext_resource type="Texture2D" uid="uid://cd0cfn8c8e044" path="res://art/enemies/maciek.png" id="2_8t4x4"]
+[ext_resource type="Script" uid="uid://bwa126feqvop7" path="res://custom_resources/enemy_stats.gd" id="3_r121g"]
+
+[resource]
+script = ExtResource("3_r121g")
+ai = ExtResource("1_peiwi")
+max_health = 40
+art = ExtResource("2_8t4x4")
+animation_name = "idle"
+metadata/_custom_type_script = "uid://bwa126feqvop7"

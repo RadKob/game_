@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3c3j8uts8a24"]
+
+[ext_resource type="Script" uid="uid://budxgr4r7d82f" path="res://scenes/enemy/enemy_action_picker.gd" id="1_62dd0"]
+[ext_resource type="Script" uid="uid://c42ixxfa3pr1e" path="res://enemies/maciek/maciek_attack_action.gd" id="2_1wefb"]
+[ext_resource type="Texture2D" uid="uid://jqmwj2cg3n1u" path="res://art/enemy_attack_intent.png" id="3_ducl6"]
+[ext_resource type="Script" uid="uid://daxyv8t6x5mgc" path="res://custom_resources/intent.gd" id="4_y8ngy"]
+[ext_resource type="Script" uid="uid://xd8gapl8y7mf" path="res://enemies/maciek/maciek_block_action.gd" id="5_a64hp"]
+[ext_resource type="Texture2D" uid="uid://hr1n8vlhu4g7" path="res://art/enemy_shield_intent.png" id="6_7lqeh"]
+[ext_resource type="Script" uid="uid://cw82pgl2nus7p" path="res://enemies/maciek/maciek_mega_block_action.gd" id="7_cdq8a"]
+
+[sub_resource type="Resource" id="Resource_srlsk"]
+script = ExtResource("4_y8ngy")
+number = "11"
+icon = ExtResource("3_ducl6")
+metadata/_custom_type_script = "uid://daxyv8t6x5mgc"
+
+[sub_resource type="Resource" id="Resource_ddfyo"]
+script = ExtResource("4_y8ngy")
+number = "3"
+icon = ExtResource("6_7lqeh")
+metadata/_custom_type_script = "uid://daxyv8t6x5mgc"
+
+[sub_resource type="Resource" id="Resource_ubu1f"]
+script = ExtResource("4_y8ngy")
+number = "30"
+icon = ExtResource("6_7lqeh")
+metadata/_custom_type_script = "uid://daxyv8t6x5mgc"
+
+[node name="Devil2EnemyAi" type="Node"]
+script = ExtResource("1_62dd0")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_1wefb")
+intent = SubResource("Resource_srlsk")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("5_a64hp")
+intent = SubResource("Resource_ddfyo")
+type = 1
+chance_weight = 1.0
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("7_cdq8a")
+intent = SubResource("Resource_ubu1f")

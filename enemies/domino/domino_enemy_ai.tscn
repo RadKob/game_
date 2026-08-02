@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://bflhuqi8wbsqo"]
+
+[ext_resource type="Script" uid="uid://budxgr4r7d82f" path="res://scenes/enemy/enemy_action_picker.gd" id="1_b5el1"]
+[ext_resource type="Script" uid="uid://c8sgtps33tl2n" path="res://enemies/domino/domino_attack_action.gd" id="2_2bhc3"]
+[ext_resource type="Texture2D" uid="uid://jqmwj2cg3n1u" path="res://art/enemy_attack_intent.png" id="3_8704t"]
+[ext_resource type="Script" uid="uid://daxyv8t6x5mgc" path="res://custom_resources/intent.gd" id="4_8tamj"]
+[ext_resource type="Script" uid="uid://br57qdb73xrj1" path="res://enemies/domino/domino_block_action.gd" id="5_ixydk"]
+[ext_resource type="Texture2D" uid="uid://hr1n8vlhu4g7" path="res://art/enemy_shield_intent.png" id="6_oiery"]
+[ext_resource type="Script" uid="uid://bksn11wbp1b4r" path="res://enemies/domino/domino_mega_block_action.gd" id="7_ijp8j"]
+
+[sub_resource type="Resource" id="Resource_8xi5c"]
+script = ExtResource("4_8tamj")
+number = "7"
+icon = ExtResource("3_8704t")
+metadata/_custom_type_script = "uid://daxyv8t6x5mgc"
+
+[sub_resource type="Resource" id="Resource_85r7w"]
+script = ExtResource("4_8tamj")
+number = ""
+icon = ExtResource("6_oiery")
+metadata/_custom_type_script = "uid://daxyv8t6x5mgc"
+
+[sub_resource type="Resource" id="Resource_c12kw"]
+script = ExtResource("4_8tamj")
+number = ""
+icon = ExtResource("6_oiery")
+metadata/_custom_type_script = "uid://daxyv8t6x5mgc"
+
+[node name="DevilEnemyAi" type="Node"]
+script = ExtResource("1_b5el1")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_2bhc3")
+intent = SubResource("Resource_8xi5c")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("5_ixydk")
+intent = SubResource("Resource_85r7w")
+type = 1
+chance_weight = 1.0
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("7_ijp8j")
+intent = SubResource("Resource_c12kw")

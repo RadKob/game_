@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bjk3306qtyldi" path="res://scenes/ui/enemy_stats_ui.tscn" id="3_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://673goql1ko30" path="res://art/player64.png" id="3_c4w8v"]
 [ext_resource type="Script" uid="uid://cwu0kjj0685ls" path="res://custom_resources/stats.gd" id="3_xwavj"]
-[ext_resource type="Texture2D" uid="uid://qtdyk1qc3mu6" path="res://art/enemies/rat.png" id="4_nbhyu"]
+[ext_resource type="Texture2D" uid="uid://djt4mk2bhi2rs" path="res://art/enemies/domino.png" id="4_nbhyu"]
 [ext_resource type="PackedScene" uid="uid://b0cjfbsnr6f2w" path="res://scenes/ui/intent_ui.tscn" id="6_cwlon"]
 
 [sub_resource type="Resource" id="Resource_nenq2"]
@@ -16,16 +16,14 @@ animation_name = "idle"
 metadata/_custom_type_script = "uid://cwu0kjj0685ls"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icoan"]
-size = Vector2(96, 96)
+size = Vector2(70, 110)
 
 [node name="Enemy" type="Area2D" groups=["enemies"]]
-scale = Vector2(3, 3)
 collision_layer = 4
 script = ExtResource("1_5uy6h")
 stats = SubResource("Resource_nenq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_nbhyu")
 
 [node name="Arrow" type="Sprite2D" parent="."]
@@ -34,19 +32,20 @@ texture = ExtResource("2_md0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_icoan")
+metadata/_edit_lock_ = true
 
 [node name="EnemyStatsUI" parent="." instance=ExtResource("3_4ra3w")]
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -46.0
-offset_top = 50.0
+offset_top = 60.0
 offset_right = 46.0
-offset_bottom = 64.0
+offset_bottom = 74.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="IntentUI" parent="." instance=ExtResource("6_cwlon")]
@@ -54,9 +53,9 @@ anchors_preset = 8
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -11.0
-offset_top = -69.0
+offset_top = -79.0
 offset_right = 11.0
-offset_bottom = -55.0
+offset_bottom = -65.0
 grow_vertical = 2
 size_flags_horizontal = 4
 

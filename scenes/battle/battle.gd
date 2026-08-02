@@ -3,10 +3,10 @@ extends Node2D
 @export var char_stats: CharacterStats
 @export var music: AudioStream
 
-@onready var battle_ui: BattleUI = $ConteinersUI/BotUI/HBoxContainer/BattleUI as BattleUI
+@onready var battle_ui: BattleUI = $BattleUI as BattleUI
 @onready var player_handler: PlayerHandler = $PlayerHandler as PlayerHandler
-@onready var enemy_handler: EnemyHandler = $ConteinersUI/MidUI/EnemyHandler as EnemyHandler
-@onready var player: Player = $ConteinersUI/MidUI/Player as Player
+@onready var enemy_handler: EnemyHandler = $BattleUI/VBoxContainer/MidUI/EnemyHandler as EnemyHandler
+@onready var player: Player = $BattleUI/VBoxContainer/MidUI/Player as Player
 
 func _ready() -> void:
 	var new_stats: CharacterStats = char_stats.create_instance()

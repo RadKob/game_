@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://4ggv34465iw1"]
+[gd_scene load_steps=4 format=3 uid="uid://4ggv34465iw1"]
 
 [ext_resource type="Script" uid="uid://dgvc6gb8yiyn0" path="res://scenes/ui/card_pile_view.gd" id="1_5fd14"]
-[ext_resource type="PackedScene" uid="uid://7xn2u2464ivk" path="res://scenes/ui/card_menu_ui.tscn" id="1_iolsb"]
 [ext_resource type="PackedScene" uid="uid://cg21bdwbnbx5p" path="res://scenes/ui/card_tooltip_poup.tscn" id="2_bd0ix"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bd0ix"]
@@ -62,78 +61,6 @@ size_flags_vertical = 3
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 10
 columns = 6
-
-[node name="CardMenuUI" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI2" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI3" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI4" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI5" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI6" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI7" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI8" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI9" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI10" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI11" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI12" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI13" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI14" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI15" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI16" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI17" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI18" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI19" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI20" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI21" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI22" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI23" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
-
-[node name="CardMenuUI24" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" instance=ExtResource("1_iolsb")]
-layout_mode = 2
 
 [node name="BackButton" type="Button" parent="."]
 unique_name_in_owner = true

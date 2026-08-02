@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://h13cjqb62qdn"]
+
+[ext_resource type="Texture2D" uid="uid://c50qrdx7pq2f5" path="res://art/cards_icons/basic_ammo.png" id="1_ke1a3"]
+[ext_resource type="Script" uid="uid://b5mfqupophsy7" path="res://characters/warrior/cards/boner_ammo.gd" id="2_ygglg"]
+
+[resource]
+script = ExtResource("2_ygglg")
+id = "boner_ammo"
+type = 1
+rarity = 0
+target = 0
+cost = 1
+value = 2
+icon = ExtResource("1_ke1a3")
+tooltip_text = "Deal [color=\"#FF0000\"]8[/color] damage."
+metadata/_custom_type_script = "uid://cq0yslbbyqadv"
