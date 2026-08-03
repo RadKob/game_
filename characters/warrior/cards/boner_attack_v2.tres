@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b4xg451t76sri"]
+
+[ext_resource type="Texture2D" uid="uid://cp66tnwp0skyy" path="res://art/cards_icons/sword.png" id="1_xbhoo"]
+[ext_resource type="Script" uid="uid://bvt8k5gfv7om5" path="res://characters/warrior/cards/boner_attack_v2.gd" id="2_0fxtu"]
+
+[resource]
+script = ExtResource("2_0fxtu")
+id = "boner_attack_v2"
+type = 0
+rarity = 1
+target = 2
+cost = 2
+value = 10
+icon = ExtResource("1_xbhoo")
+tooltip_text = "Damage 10"
+metadata/_custom_type_script = "uid://cq0yslbbyqadv"

@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=6 format=3 uid="uid://ct0ydwniol2rm"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=8 format=3 uid="uid://ct0ydwniol2rm"]
 
 [ext_resource type="Script" uid="uid://cq0yslbbyqadv" path="res://custom_resources/card.gd" id="1_pbt30"]
 [ext_resource type="Resource" uid="uid://dklvks874h6h" path="res://characters/warrior/cards/boner_attack.tres" id="2_xwp4e"]
 [ext_resource type="Resource" uid="uid://nyyce41wl4a7" path="res://characters/warrior/cards/boner_block.tres" id="3_wc66q"]
 [ext_resource type="Resource" uid="uid://h13cjqb62qdn" path="res://characters/warrior/cards/boner_ammo.tres" id="4_f365l"]
 [ext_resource type="Script" uid="uid://qht146ku6obe" path="res://custom_resources/card_pile.gd" id="5_hk3xf"]
+[ext_resource type="Resource" uid="uid://b4xg451t76sri" path="res://characters/warrior/cards/boner_attack_v2.tres" id="5_wc66q"]
+[ext_resource type="Resource" uid="uid://btu5dbpp61ba" path="res://characters/warrior/cards/boner_drink.tres" id="6_f365l"]
 
 [resource]
 script = ExtResource("5_hk3xf")
-cards = Array[ExtResource("1_pbt30")]([ExtResource("2_xwp4e"), ExtResource("2_xwp4e"), ExtResource("2_xwp4e"), ExtResource("2_xwp4e"), ExtResource("2_xwp4e"), ExtResource("3_wc66q"), ExtResource("3_wc66q"), ExtResource("3_wc66q"), ExtResource("3_wc66q"), ExtResource("4_f365l")])
+cards = Array[ExtResource("1_pbt30")]([ExtResource("2_xwp4e"), ExtResource("2_xwp4e"), ExtResource("2_xwp4e"), ExtResource("2_xwp4e"), ExtResource("2_xwp4e"), ExtResource("3_wc66q"), ExtResource("3_wc66q"), ExtResource("3_wc66q"), ExtResource("3_wc66q"), ExtResource("4_f365l"), ExtResource("5_wc66q"), ExtResource("6_f365l")])
 metadata/_custom_type_script = "uid://qht146ku6obe"
