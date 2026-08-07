@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://vt8vsl2oqlvh"]
+[gd_scene load_steps=7 format=3 uid="uid://vt8vsl2oqlvh"]
 
 [ext_resource type="Script" uid="uid://bgqx5p5tiafnc" path="res://scenes/battle_reward/battle_reward.gd" id="1_d75l8"]
 [ext_resource type="Texture2D" uid="uid://calnss3ore6hj" path="res://art/battle_background.png" id="2_dv6k8"]
+[ext_resource type="PackedScene" uid="uid://bphurjqwr8v3x" path="res://scenes/ui/reward_button.tscn" id="3_beus2"]
 [ext_resource type="Texture2D" uid="uid://bnlw2kiu21aw4" path="res://art/end_turn_button.png" id="3_jcbo2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dv6k8"]
@@ -79,6 +80,9 @@ theme_override_constants/margin_bottom = 10
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="RewardButton" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("3_beus2")]
+layout_mode = 2
+
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 custom_minimum_size = Vector2(150, 32)
 layout_mode = 2
@@ -95,4 +99,4 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Continue"
 
-[connection signal="pressed" from="VBoxContainer/TextureRect/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureRect/BackButton" to="." method="_on_back_button_pressed"]
