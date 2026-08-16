@@ -16,16 +16,16 @@ const ICONS := {
 @onready var line_2d: Line2D = $Visuals/Line2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var available := true : set = set_available
+var available := false : set = set_available
 var room: Room : set = set_room
 
-func _ready() -> void:
-	var test_room := Room. new()
-	test_room.type = Room.Type.CAMPFIRE
-	test_room.position = Vector2(100,100)
-	room = test_room
-	await get_tree().create_timer(3).timeout
-	available = true
+#func _ready() -> void:
+#	var test_room := Room. new()
+#	test_room.type = Room.Type.CAMPFIRE
+#	test_room.position = Vector2(100,100)
+#	room = test_room
+#	await get_tree().create_timer(3).timeout
+#	available = true
 
 func set_available(new_value: bool) -> void:
 	available = new_value

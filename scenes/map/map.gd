@@ -37,7 +37,7 @@ func create_map() -> void:
 		for room: Room in current_floor:
 			if room.next_rooms.size() > 0:
 				_spawn_room(room)
-				
+	
 	var middle := floori(MapGenerator.MAP_WIDTH * 0.5)
 	_spawn_room(map_data[MapGenerator.FLOORS-1][middle])
 	
