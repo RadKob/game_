@@ -7,8 +7,8 @@ const ICONS := {
 	Room.Type.NOT_ASSIGNED: [null, Vector2.ONE],
 	Room.Type.MONSTER: [preload("res://art/map_icon/monster.png"), Vector2.ONE],
 	Room.Type.TREASURE: [preload("res://art/map_icon/treasure.png"), Vector2.ONE],
-	Room.Type.CAMPFIRE: [preload("res://art/map_icon/campfire.png"), Vector2(0.6, 0.6)],
-	Room.Type.SHOP: [preload("res://art/map_icon/shop.png"), Vector2(0.6, 0.6)],
+	Room.Type.CAMPFIRE: [preload("res://art/map_icon/campfire.png"), Vector2.ONE],
+	Room.Type.SHOP: [preload("res://art/map_icon/shop.png"), Vector2.ONE],
 	Room.Type.BOSS: [preload("res://art/map_icon/monster.png"), Vector2(1.25, 1.25)],
 }
 
@@ -16,8 +16,16 @@ const ICONS := {
 @onready var line_2d: Line2D = $Visuals/Line2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var available := false : set = set_available
+var available := true : set = set_available
 var room: Room : set = set_room
+
+func _ready() -> void:
+	var test_room := Room. new()
+	test_room.type = Room.Type.CAMPFIRE
+	test_room.position = Vector2(100,100)
+	room = test_room
+	await get_tree().create_timer(3).timeout
+	available = true
 
 func set_available(new_value: bool) -> void:
 	available = new_value
