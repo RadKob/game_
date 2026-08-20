@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwostcv4ut1ba"]
+
+[ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy/enemy.tscn" id="1_jv1um"]
+[ext_resource type="Resource" uid="uid://8bw6meclqtpq" path="res://enemies/maciek/maciek_enemy.tres" id="2_ulmbl"]
+
+[node name="Tier0Maciek" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_jv1um")]
+position = Vector2(660, 290)
+stats = ExtResource("2_ulmbl")

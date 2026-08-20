@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=2 format=3 uid="uid://cg8m8bqg7pkoo"]
+
+[ext_resource type="Script" uid="uid://p2o6x4jsxb6o" path="res://custom_resources/battle_stats.gd" id="1_tx4u0"]
+
+[resource]
+script = ExtResource("1_tx4u0")
+battle_tier = 1
+weight = 2.0
+gold_reward_min = 25
+gold_reward_max = 35
+metadata/_custom_type_script = "uid://p2o6x4jsxb6o"

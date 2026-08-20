@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpkocp4s7j2x4"]
+
+[ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy/enemy.tscn" id="1_upv52"]
+[ext_resource type="Resource" uid="uid://rqc2wmxt6fo8" path="res://enemies/domino/domino_enemy.tres" id="2_h0cy0"]
+
+[node name="Tier0Domino" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_upv52")]
+position = Vector2(660, 290)
+stats = ExtResource("2_h0cy0")

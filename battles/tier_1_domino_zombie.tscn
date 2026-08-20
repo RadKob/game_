@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://baxg8gic7xgk"]
+
+[ext_resource type="PackedScene" uid="uid://dn8vgyp6mhfoj" path="res://scenes/enemy/enemy.tscn" id="1_5swni"]
+[ext_resource type="Resource" uid="uid://rqc2wmxt6fo8" path="res://enemies/domino/domino_enemy.tres" id="2_xx2f7"]
+[ext_resource type="Resource" uid="uid://8bw6meclqtpq" path="res://enemies/maciek/maciek_enemy.tres" id="3_8hcf0"]
+
+[node name="Tier1DominoZombie" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_5swni")]
+position = Vector2(610, 290)
+stats = ExtResource("2_xx2f7")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_5swni")]
+position = Vector2(710, 290)
+stats = ExtResource("3_8hcf0")
