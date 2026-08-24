@@ -10,5 +10,7 @@ enum Type {NOT_ASSIGNED, MONSTER, TREASURE, CAMPFIRE, SHOP, BOSS}
 @export var next_rooms: Array[Room]
 @export var selected := false
 
+@export var battle_stats: BattleStats
+
 func _to_string() -> String:
 	return "%s (%s)" % [column, Type.keys()[type][0]]
