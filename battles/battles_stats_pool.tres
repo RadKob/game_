@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=7 format=3 uid="uid://e8m6rek0h1ll"]
+[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=5 format=3 uid="uid://e8m6rek0h1ll"]
 
 [ext_resource type="Script" uid="uid://p2o6x4jsxb6o" path="res://custom_resources/battle_stats.gd" id="1_hsp3n"]
 [ext_resource type="Resource" uid="uid://5bn0ywp5i33k" path="res://battles/tier_0_domino.tres" id="2_6p2ex"]
 [ext_resource type="Script" uid="uid://c8op8mggd7uf5" path="res://custom_resources/battle_stats_pool.gd" id="2_m1ahc"]
 [ext_resource type="Resource" uid="uid://caj1sin8xfq6n" path="res://battles/tier_0_maciek.tres" id="3_0k6nx"]
-[ext_resource type="Resource" uid="uid://cvg8guyyvw42g" path="res://battles/tier_1_domino_zombie.tres" id="4_y1oss"]
-[ext_resource type="Resource" uid="uid://cg8m8bqg7pkoo" path="res://battles/tier_1_zombie.tres" id="5_1d7k1"]
 
 [resource]
 script = ExtResource("2_m1ahc")
-pool = Array[ExtResource("1_hsp3n")]([ExtResource("2_6p2ex"), ExtResource("3_0k6nx"), ExtResource("4_y1oss"), ExtResource("5_1d7k1")])
+pool = Array[ExtResource("1_hsp3n")]([ExtResource("2_6p2ex"), ExtResource("3_0k6nx")])
 metadata/_custom_type_script = "uid://c8op8mggd7uf5"

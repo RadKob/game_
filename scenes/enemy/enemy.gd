@@ -19,7 +19,7 @@ func set_current_action(value: EnemyAction) -> void:
 		intent_ui.update_intent(current_action.intent)
 
 func set_enemy_stats(value: EnemyStats) -> void:
-	stats = value. create_instance()
+	stats = value.create_instance()
 	
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)

@@ -26,7 +26,7 @@ func get_random_battle_for_tier(tier: int) -> BattleStats:
 	for battle: BattleStats in battles:
 		if battle.accumulated_weight > roll:
 			return battle
-	
+		
 	return null
 
 func setup() -> void:

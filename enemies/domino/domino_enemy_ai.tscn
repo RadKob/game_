@@ -26,7 +26,7 @@ number = ""
 icon = ExtResource("6_oiery")
 metadata/_custom_type_script = "uid://daxyv8t6x5mgc"
 
-[node name="DevilEnemyAi" type="Node"]
+[node name="DominoEnemyAi" type="Node"]
 script = ExtResource("1_b5el1")
 
 [node name="AttackAction" type="Node" parent="."]

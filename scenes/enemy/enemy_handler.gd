@@ -16,7 +16,8 @@ func setup_enemies(battle_stats: BattleStats) -> void:
 	for new_enemy: Node2D in all_new_enemies.get_children():
 		var new_enemy_child := new_enemy.duplicate() as Enemy
 		add_child(new_enemy_child)
-	
+		new_enemy_child.global_position = new_enemy.global_position
+		
 	all_new_enemies.queue_free()
 
 func reset_enemy_actions() -> void:

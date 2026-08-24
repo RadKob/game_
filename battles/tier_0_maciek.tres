@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://caj1sin8xfq6n"]
 
-[ext_resource type="Script" uid="uid://p2o6x4jsxb6o" path="res://custom_resources/battle_stats.gd" id="1_h5efq"]
-[ext_resource type="PackedScene" uid="uid://bwostcv4ut1ba" path="res://battles/tier_0_maciek.tscn" id="1_x6pra"]
+[ext_resource type="PackedScene" uid="uid://bwostcv4ut1ba" path="res://battles/tier_0_maciek.tscn" id="1_4x0vk"]
+[ext_resource type="Script" uid="uid://p2o6x4jsxb6o" path="res://custom_resources/battle_stats.gd" id="2_435ph"]
 
 [resource]
-script = ExtResource("1_h5efq")
+script = ExtResource("2_435ph")
 battle_tier = 0
 weight = 2.5
 gold_reward_min = 10
 gold_reward_max = 20
-enemies = ExtResource("1_x6pra")
+enemies = ExtResource("1_4x0vk")
 metadata/_custom_type_script = "uid://p2o6x4jsxb6o"
