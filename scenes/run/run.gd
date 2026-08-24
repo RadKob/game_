@@ -85,17 +85,15 @@ func _setup_top_bar():
 func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.char_stats = character
-	battle_scene.battle_stats = preload("res://battles/tier_0_maciek.tres")
+	battle_scene.battle_stats = room.battle_stats
 	battle_scene.start_battle()
-	
-	
 
 func _on_battle_won() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
 	
-	reward_scene.add_gold_reward(100)
+	reward_scene.add_gold_reward(map.last_room.battle_stats.rool_gold_reward())
 	reward_scene.add_card_reward()
 
 func _on_map_exited(room: Room) -> void:
