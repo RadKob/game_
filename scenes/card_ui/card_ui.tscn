@@ -13,30 +13,11 @@
 [ext_resource type="Script" uid="uid://kr1ikrqkypmr" path="res://scenes/card_ui/card_states/card_aiming_state.gd" id="8_yxx8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gy3gl"]
-size = Vector2(68, 68)
+size = Vector2(80, 120)
 
 [node name="CardUI" type="Control"]
-custom_minimum_size = Vector2(68, 68)
+custom_minimum_size = Vector2(80, 120)
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -34.0
-offset_right = 34.0
-offset_bottom = 34.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme = ExtResource("1_gy3gl")
-script = ExtResource("2_els2s")
-active_orb = ExtResource("4_opj8w")
-inactive_orb = ExtResource("5_25o76")
-
-[node name="CardVisuals" parent="." instance=ExtResource("5_qeblu")]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -48,6 +29,16 @@ offset_right = 40.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_gy3gl")
+script = ExtResource("2_els2s")
+active_orb = ExtResource("4_opj8w")
+inactive_orb = ExtResource("5_25o76")
+
+[node name="CardVisuals" parent="." instance=ExtResource("5_qeblu")]
+layout_mode = 1
 mouse_filter = 2
 
 [node name="DropPointDetector" type="Area2D" parent="."]
@@ -57,7 +48,8 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
 z_index = 1
-position = Vector2(34, 34)
+position = Vector2(32, 48)
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_gy3gl")
 metadata/_edit_lock_ = true
 

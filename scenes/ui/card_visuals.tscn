@@ -1,18 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvjs8o4kauam6"]
+[gd_scene load_steps=9 format=3 uid="uid://bvjs8o4kauam6"]
 
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_m3e03"]
-[ext_resource type="Texture2D" uid="uid://bwmtw6jxyfplk" path="res://art/card_ui/card_background.png" id="2_bp74k"]
 [ext_resource type="Script" uid="uid://eql3ohw0q1wx" path="res://scenes/ui/card_visuals.gd" id="2_njcf5"]
 [ext_resource type="Resource" uid="uid://nyyce41wl4a7" path="res://characters/warrior/cards/boner_block.tres" id="3_b8ve4"]
-[ext_resource type="Texture2D" uid="uid://b3nfpsoynell3" path="res://art/card_ui/card_rarity_frame_common.png" id="3_njcf5"]
-[ext_resource type="Texture2D" uid="uid://dhjgapfpq10wc" path="res://art/card_ui/card_symbol_type_attack.png" id="4_b8ve4"]
 [ext_resource type="Texture2D" uid="uid://dksssrpbpbii4" path="res://art/cost_orb_v.png" id="5_0ge8e"]
 [ext_resource type="Texture2D" uid="uid://ujpsd47q3l02" path="res://art/cost_orb_e.png" id="6_k4udy"]
-[ext_resource type="Texture2D" uid="uid://c4by70457mdmc" path="res://art/cards_icons/basic_attack.png" id="7_6o0a7"]
 [ext_resource type="Texture2D" uid="uid://b0l50ywpty8f8" path="res://art/cards_icons/shot.png" id="10_b8ve4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spm00"]
-draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8ve4"]
 bg_color = Color(0.917647, 0.831373, 0.717647, 1)
@@ -31,8 +24,17 @@ corner_radius_bottom_left = 5
 [node name="CardVisuals" type="Control"]
 custom_minimum_size = Vector2(80, 120)
 layout_mode = 3
-anchors_preset = 0
-scale = Vector2(0.8, 0.8)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -60.0
+offset_right = 40.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_m3e03")
 script = ExtResource("2_njcf5")
 card = ExtResource("3_b8ve4")
@@ -40,131 +42,16 @@ active_orb = ExtResource("5_0ge8e")
 inactive_orb = ExtResource("6_k4udy")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
-custom_minimum_size = Vector2(68, 68)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -34.0
-offset_right = 34.0
-offset_bottom = 34.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_spm00")
-
-[node name="CardBackground" type="TextureRect" parent="Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_bp74k")
-
-[node name="CardFrame" type="TextureRect" parent="Panel/CardBackground"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_njcf5")
-
-[node name="CardType" type="TextureRect" parent="Panel/CardBackground"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_b8ve4")
-
-[node name="CostContainer" type="VBoxContainer" parent="Panel/CardBackground"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -15.5
-offset_top = -16.0
-offset_right = 15.5
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
-[node name="OrbContainer" type="HBoxContainer" parent="Panel/CardBackground/CostContainer"]
-custom_minimum_size = Vector2(31, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 2
-alignment = 1
-
-[node name="orb1" type="TextureRect" parent="Panel/CardBackground/CostContainer/OrbContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("5_0ge8e")
-
-[node name="orb2" type="TextureRect" parent="Panel/CardBackground/CostContainer/OrbContainer"]
-layout_mode = 2
-texture = ExtResource("5_0ge8e")
-
-[node name="orb3" type="TextureRect" parent="Panel/CardBackground/CostContainer/OrbContainer"]
-layout_mode = 2
-texture = ExtResource("6_k4udy")
-
-[node name="Icon" type="TextureRect" parent="Panel/CardBackground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -19.0
-offset_top = -19.0
-offset_right = -3.0
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 0.436332
-scale = Vector2(1.25, 1.25)
-pivot_offset = Vector2(8, 16)
-texture = ExtResource("7_6o0a7")
-flip_h = true
-
-[node name="Value" type="Label" parent="Panel/CardBackground"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -9.0
-offset_bottom = 9.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 20
-text = "10"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b8ve4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 custom_minimum_size = Vector2(76, 116)
 layout_mode = 1
 anchors_preset = 8
@@ -178,14 +65,49 @@ offset_right = 38.0
 offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="IconBackground" type="Panel" parent="Panel2/VBoxContainer"]
+[node name="IconBackground" type="Panel" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(76, 76)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0ge8e")
 
-[node name="Icon" type="TextureRect" parent="Panel2/VBoxContainer/IconBackground"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/IconBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_right = 38.0
+offset_bottom = 10.0
+grow_horizontal = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="OrbContainer" type="HBoxContainer" parent="Panel/VBoxContainer/IconBackground/HBoxContainer"]
+custom_minimum_size = Vector2(31, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="orb1" type="TextureRect" parent="Panel/VBoxContainer/IconBackground/HBoxContainer/OrbContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_0ge8e")
+
+[node name="orb2" type="TextureRect" parent="Panel/VBoxContainer/IconBackground/HBoxContainer/OrbContainer"]
+layout_mode = 2
+texture = ExtResource("5_0ge8e")
+
+[node name="orb3" type="TextureRect" parent="Panel/VBoxContainer/IconBackground/HBoxContainer/OrbContainer"]
+layout_mode = 2
+texture = ExtResource("6_k4udy")
+
+[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/IconBackground"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -201,14 +123,38 @@ grow_vertical = 2
 texture = ExtResource("10_b8ve4")
 stretch_mode = 5
 
-[node name="TextBackround" type="ColorRect" parent="Panel2/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/IconBackground"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -13.0
+offset_right = 38.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/IconBackground/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBackround" type="ColorRect" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(76, 38)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 color = Color(0.917647, 0.831373, 0.717647, 1)
 
-[node name="Label" type="Label" parent="Panel2/VBoxContainer/TextBackround"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/TextBackround"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -5,17 +5,17 @@ extends Control
 
 @onready var panel: Panel = $Panel
 @onready var cost_orbs: Array[TextureRect] = [
-	$Panel/CardBackground/CostContainer/OrbContainer/orb1,
-	$Panel/CardBackground/CostContainer/OrbContainer/orb2,
-	$Panel/CardBackground/CostContainer/OrbContainer/orb3
+	$Panel/VBoxContainer/IconBackground/HBoxContainer/OrbContainer/orb1,
+	$Panel/VBoxContainer/IconBackground/HBoxContainer/OrbContainer/orb2,
+	$Panel/VBoxContainer/IconBackground/HBoxContainer/OrbContainer/orb3
 ]
 @export var active_orb: Texture2D
 @export var inactive_orb: Texture2D
-@onready var icon: TextureRect = $Panel/CardBackground/Icon
-@onready var card_value: Label = $Panel/CardBackground/Value
+@onready var icon: TextureRect = $Panel/VBoxContainer/IconBackground/Icon
+#@onready var card_value: Label = $Panel/CardBackground/Value
 
-@onready var rarity: TextureRect = $Panel/CardBackground/CardFrame
-@onready var type: TextureRect = $Panel/CardBackground/CardType
+#@onready var rarity: TextureRect = $Panel/CardBackground/CardFrame
+#@onready var type: TextureRect = $Panel/CardBackground/CardType
 
 const ATTACK_BG := preload("res://art/card_ui/card_symbol_type_attack.png")
 const SKILL_BG := preload("res://art/card_ui/card_symbol_type_skill.png")
@@ -32,23 +32,23 @@ func set_card(value: Card) -> void:
 	card = value
 	update_cost_orbs(card.cost)
 	icon.texture = card.icon
-	card_value.text = str(card.value)
+	#card_value.text = str(card.value)
 	
-	match card.type:
-		Card.Type.ATTACK:
-			type.texture = ATTACK_BG
-		Card.Type.SKILL:
-			type.texture = SKILL_BG
-		Card.Type.POWER:
-			type.texture = POWER_BG
+	#match card.type:
+		#Card.Type.ATTACK:
+			#type.texture = ATTACK_BG
+		#Card.Type.SKILL:
+			#type.texture = SKILL_BG
+		#Card.Type.POWER:
+			#type.texture = POWER_BG
 	
-	match card.rarity:
-		Card.Rarity.COMMON:
-			rarity.texture = COMMON_FRAME
-		Card.Rarity.RARE:
-			rarity.texture = RARE_FRAME
-		Card.Rarity.EPIC:
-			rarity.texture = EPIC_FRAME
+	#match card.rarity:
+		#Card.Rarity.COMMON:
+			#rarity.texture = COMMON_FRAME
+		#Card.Rarity.RARE:
+			#rarity.texture = RARE_FRAME
+		#Card.Rarity.EPIC:
+			#rarity.texture = EPIC_FRAME
 
 
 func update_cost_orbs(current_cost: int) -> void:

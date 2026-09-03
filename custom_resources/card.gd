@@ -12,10 +12,11 @@ enum Rarity {COMMON, RARE, EPIC}
 @export var target: Target
 @export var cost: int
 @export var value: int
+@export var tooltip_text: String
 
 @export_group("Card Visuals")
 @export var icon: Texture
-@export_multiline var tooltip_text: String
+#@export_multiline var tooltip_text: String
 @export var sound: AudioStream
 
 func is_single_targeted() -> bool:
