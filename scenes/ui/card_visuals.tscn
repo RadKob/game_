@@ -154,7 +154,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 color = Color(0.917647, 0.831373, 0.717647, 1)
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/TextBackround"]
+[node name="Text" type="Label" parent="Panel/VBoxContainer/TextBackround"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

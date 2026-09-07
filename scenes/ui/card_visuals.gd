@@ -12,6 +12,7 @@ extends Control
 @export var active_orb: Texture2D
 @export var inactive_orb: Texture2D
 @onready var icon: TextureRect = $Panel/VBoxContainer/IconBackground/Icon
+@onready var text: Label = $Panel/VBoxContainer/TextBackround/Text
 #@onready var card_value: Label = $Panel/CardBackground/Value
 
 #@onready var rarity: TextureRect = $Panel/CardBackground/CardFrame
@@ -32,6 +33,7 @@ func set_card(value: Card) -> void:
 	card = value
 	update_cost_orbs(card.cost)
 	icon.texture = card.icon
+	text.text = card.tooltip_text
 	#card_value.text = str(card.value)
 	
 	#match card.type:
