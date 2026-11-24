@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_ygglg")
 id = "boner_ammo"
+card_name = ""
 type = 1
 rarity = 0
 target = 0

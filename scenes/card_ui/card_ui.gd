@@ -6,24 +6,7 @@ signal reparent_requested(which_card_ui: CardUI)
 @export var card: Card : set = _set_card
 @export var char_stats: CharacterStats : set = _set_char_stats
 
-@onready var cost_orbs: Array[TextureRect] = [
-	$Panel/CardBackground/CostContainer/OrbContainer/orb1,
-	$Panel/CardBackground/CostContainer/OrbContainer/orb2,
-	$Panel/CardBackground/CostContainer/OrbContainer/orb3
-]
-@export var active_orb: Texture2D
-@export var inactive_orb: Texture2D
-
-const ATTACK_BG := preload("res://art/card_ui/card_symbol_type_attack.png")
-const SKILL_BG := preload("res://art/card_ui/card_symbol_type_skill.png")
-const POWER_BG := preload("res://art/card_ui/card_symbol_type_power.png")
-
-const COMMON_FRAME := preload("res://art/card_ui/card_rarity_frame_common.png")
-const RARE_FRAME := preload("res://art/card_ui/card_rarity_frame_rare.png")
-const EPIC_FRAME := preload("res://art/card_ui/card_rarity_frame_epic.png")
-
 @onready var card_visuals: CardVisuals = $CardVisuals
-
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var targets: Array[Node] = []
@@ -70,15 +53,6 @@ func _set_card(value: Card) -> void:
 	
 	card = value
 	card_visuals.card = card
-			
-func update_cost_orbs(current_cost: int) -> void:
-	current_cost = clamp(current_cost, 0, cost_orbs.size())
-	
-	for i in range(cost_orbs.size()):
-		if i < current_cost:
-			cost_orbs[i].texture = active_orb
-		else:
-			cost_orbs[i].texture = inactive_orb
 
 func _set_playable(value: bool) -> void:
 	playable = value

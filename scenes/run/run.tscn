@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://iyjw0et20ago"]
+[gd_scene load_steps=10 format=3 uid="uid://iyjw0et20ago"]
 
 [ext_resource type="PackedScene" uid="uid://mmww6c5xv3de" path="res://scenes/map/map.tscn" id="1_8rlou"]
 [ext_resource type="Script" uid="uid://b6bi8u6er38bs" path="res://scenes/run/run.gd" id="1_l7o68"]
@@ -6,6 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://d2g6tg3n2hr5v" path="res://scenes/ui/gold_ui.tscn" id="4_5o40y"]
 [ext_resource type="PackedScene" uid="uid://ep1yu2ghtupu" path="res://scenes/ui/card_pile_opener.tscn" id="4_o4jfg"]
 [ext_resource type="PackedScene" uid="uid://4ggv34465iw1" path="res://scenes/ui/card_pile_view.tscn" id="5_gqbdr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5o40y"]
+bg_color = Color(0.266667, 0.301961, 0.321569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo0nw"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tt4g"]
+bg_color = Color(0, 0, 0, 0.290196)
 
 [node name="Run" type="Node"]
 script = ExtResource("1_l7o68")
@@ -54,49 +67,66 @@ text = "campfire"
 [node name="TopBar" type="CanvasLayer" parent="."]
 layer = 3
 
-[node name="Background" type="ColorRect" parent="TopBar"]
-custom_minimum_size = Vector2(0, 72)
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-color = Color(0, 0, 0, 1)
+[node name="VBoxContainer" type="VBoxContainer" parent="TopBar"]
+offset_right = 960.0
+offset_bottom = 34.0
+theme_override_constants/separation = 0
 
-[node name="BarItems" type="HBoxContainer" parent="TopBar"]
-custom_minimum_size = Vector2(0, 72)
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
-
-[node name="GoldUI" parent="TopBar/BarItems" instance=ExtResource("4_5o40y")]
-unique_name_in_owner = true
+[node name="UI_Panel" type="Panel" parent="TopBar/VBoxContainer"]
+custom_minimum_size = Vector2(960, 40)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5o40y")
 
-[node name="Placeholder" type="Control" parent="TopBar/BarItems"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="DeckButton" parent="TopBar/BarItems" node_paths=PackedStringArray("counter") instance=ExtResource("4_o4jfg")]
-unique_name_in_owner = true
-layout_mode = 2
-counter = NodePath("Counter")
-
-[node name="Counter" type="Label" parent="TopBar/BarItems/DeckButton"]
+[node name="BarItems" type="HBoxContainer" parent="TopBar/VBoxContainer/UI_Panel"]
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -7.0
-offset_right = 20.0
-offset_bottom = 7.0
+offset_left = -476.0
+offset_top = -16.0
+offset_right = 476.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GoldUI" parent="TopBar/VBoxContainer/UI_Panel/BarItems" instance=ExtResource("4_5o40y")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Placeholder" type="Control" parent="TopBar/VBoxContainer/UI_Panel/BarItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DeckButton" parent="TopBar/VBoxContainer/UI_Panel/BarItems" node_paths=PackedStringArray("counter") instance=ExtResource("4_o4jfg")]
+unique_name_in_owner = true
+layout_mode = 2
+counter = NodePath("Counter")
+
+[node name="Counter" type="Label" parent="TopBar/VBoxContainer/UI_Panel/BarItems/DeckButton"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_wo0nw")
 text = "99"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Artefacts_Panel" type="Panel" parent="TopBar/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(960, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tt4g")
 
 [node name="DeckView" parent="TopBar" instance=ExtResource("5_gqbdr")]
 unique_name_in_owner = true

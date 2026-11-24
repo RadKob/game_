@@ -21,6 +21,8 @@ const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 @onready var shop_button: Button = %Shop
 @onready var treasure_button: Button = %Treasure
 
+@onready var artefacts_panel: Panel = $TopBar/VBoxContainer/Artefacts_Panel
+
 var stats: RunStats
 var character: CharacterStats
 

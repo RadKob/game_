@@ -1,25 +1,58 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvjs8o4kauam6"]
+[gd_scene load_steps=11 format=3 uid="uid://bvjs8o4kauam6"]
 
 [ext_resource type="Theme" uid="uid://c10kqjrk4hc5w" path="res://main_theme.tres" id="1_m3e03"]
 [ext_resource type="Script" uid="uid://eql3ohw0q1wx" path="res://scenes/ui/card_visuals.gd" id="2_njcf5"]
 [ext_resource type="Resource" uid="uid://nyyce41wl4a7" path="res://characters/warrior/cards/boner_block.tres" id="3_b8ve4"]
-[ext_resource type="Texture2D" uid="uid://dksssrpbpbii4" path="res://art/cost_orb_v.png" id="5_0ge8e"]
-[ext_resource type="Texture2D" uid="uid://ujpsd47q3l02" path="res://art/cost_orb_e.png" id="6_k4udy"]
 [ext_resource type="Texture2D" uid="uid://b0l50ywpty8f8" path="res://art/cards_icons/shot.png" id="10_b8ve4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8ve4"]
-bg_color = Color(0.917647, 0.831373, 0.717647, 1)
+bg_color = Color(0.529412, 0.529412, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 20
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp74k"]
+draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ge8e"]
-bg_color = Color(0.858824, 0.733333, 0.588235, 1)
+bg_color = Color(0.392157, 0.392157, 0.392157, 1)
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 20
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imfec"]
+bg_color = Color(0.294118, 0.294118, 0.294118, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njcf5"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3e03"]
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+anti_aliasing = false
 
 [node name="CardVisuals" type="Control"]
 custom_minimum_size = Vector2(80, 120)
@@ -38,8 +71,6 @@ grow_vertical = 2
 theme = ExtResource("1_m3e03")
 script = ExtResource("2_njcf5")
 card = ExtResource("3_b8ve4")
-active_orb = ExtResource("5_0ge8e")
-inactive_orb = ExtResource("6_k4udy")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -52,62 +83,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b8ve4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-custom_minimum_size = Vector2(76, 116)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -38.0
-offset_top = -58.0
-offset_right = 38.0
-offset_bottom = 58.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/separation = 0
-
-[node name="IconBackground" type="Panel" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(76, 76)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0ge8e")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/IconBackground"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -38.0
-offset_right = 38.0
-offset_bottom = 10.0
-grow_horizontal = 2
-mouse_filter = 2
-alignment = 1
-
-[node name="OrbContainer" type="HBoxContainer" parent="Panel/VBoxContainer/IconBackground/HBoxContainer"]
-custom_minimum_size = Vector2(31, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-mouse_filter = 2
-theme_override_constants/separation = 2
-alignment = 1
-
-[node name="orb1" type="TextureRect" parent="Panel/VBoxContainer/IconBackground/HBoxContainer/OrbContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("5_0ge8e")
-
-[node name="orb2" type="TextureRect" parent="Panel/VBoxContainer/IconBackground/HBoxContainer/OrbContainer"]
-layout_mode = 2
-texture = ExtResource("5_0ge8e")
-
-[node name="orb3" type="TextureRect" parent="Panel/VBoxContainer/IconBackground/HBoxContainer/OrbContainer"]
-layout_mode = 2
-texture = ExtResource("6_k4udy")
-
-[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/IconBackground"]
+custom_minimum_size = Vector2(80, 116)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -115,60 +91,142 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = -40.0
+offset_top = -58.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_b8ve4")
-stretch_mode = 5
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/IconBackground"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -38.0
-offset_top = -13.0
-offset_right = 38.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/IconBackground/HBoxContainer2"]
-layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "attack"
-horizontal_alignment = 1
-vertical_alignment = 1
+mouse_filter = 2
+theme_override_constants/separation = 5
 
-[node name="TextBackround" type="ColorRect" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(76, 38)
+[node name="PanelType" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-color = Color(0.917647, 0.831373, 0.717647, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_bp74k")
 
-[node name="Text" type="Label" parent="Panel/VBoxContainer/TextBackround"]
+[node name="CardType" type="Label" parent="Panel/VBoxContainer/PanelType"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -38.5
-offset_top = -5.0
-offset_right = 38.5
-offset_bottom = 5.0
+offset_left = -29.5
+offset_top = -8.0
+offset_right = 29.5
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "deal 14 damage"
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "card type"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconBackground" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(74, 74)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ge8e")
+
+[node name="IconBackground2" type="Panel" parent="Panel/VBoxContainer/IconBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_imfec")
+
+[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/IconBackground"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 44.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+mouse_filter = 2
+texture = ExtResource("10_b8ve4")
+stretch_mode = 5
+
+[node name="PanelName" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_njcf5")
+
+[node name="CardName" type="Label" parent="Panel/VBoxContainer/PanelName"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -8.0
+offset_right = 31.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -5
+text = "card name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CostPanel" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m3e03")
+
+[node name="Label" type="Label" parent="Panel/CostPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = -8.0
+offset_right = 3.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "9"
 horizontal_alignment = 1
 vertical_alignment = 1

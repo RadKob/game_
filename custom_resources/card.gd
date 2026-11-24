@@ -7,6 +7,7 @@ enum Rarity {COMMON, RARE, EPIC}
 
 @export_group("Card Attributes")
 @export var id: String
+@export var card_name: String
 @export var type: Type
 @export var rarity: Rarity
 @export var target: Target

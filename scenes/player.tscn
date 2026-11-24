@@ -13,6 +13,10 @@ stats = ExtResource("2_qlg0r")
 texture = ExtResource("3_dqkch")
 
 [node name="PlayerStatsUI" parent="." instance=ExtResource("3_qhqgy")]
-offset_top = 60.0
-offset_bottom = 74.0
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 55.0
+offset_bottom = 87.0
+grow_vertical = 0
 pivot_offset = Vector2(64, 7)

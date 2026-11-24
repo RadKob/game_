@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_1fssc")
 id = "boner_drink"
+card_name = ""
 type = 2
 rarity = 2
 target = 0

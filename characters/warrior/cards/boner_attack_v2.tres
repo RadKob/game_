@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_0fxtu")
 id = "boner_attack_v2"
+card_name = ""
 type = 0
 rarity = 1
 target = 2
